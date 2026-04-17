@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -6,7 +7,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
-            <div className="font-bold text-xl text-white mb-3">Franchise Now</div>
+            <div className="mb-3">
+              <Image src="/logo.jpg" alt="Franchise Now" width={52} height={52} className="rounded-full" />
+            </div>
             <p className="text-sm leading-relaxed max-w-xs">
               We build and manage custom AI automation systems that capture leads, automate follow-up, and fill your calendar — so you can focus on closing.
             </p>
