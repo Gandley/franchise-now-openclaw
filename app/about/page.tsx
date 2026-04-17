@@ -64,7 +64,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-900 text-white text-center">
+      <section className="py-20 bg-brand-900 text-white text-center">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-4">Ready to see what we&apos;d build for your business?</h2>
           <p className="text-gray-400 mb-8">No obligation. Just a clear picture of what&apos;s possible and what it would take.</p>

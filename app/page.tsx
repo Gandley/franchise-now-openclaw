@@ -67,7 +67,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+          <div className="inline-block bg-brand-100 text-brand-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
             AI Automation for Digital Business Owners
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
@@ -112,7 +112,7 @@ export default function HomePage() {
       </section>
 
       {/* THE PROBLEM */}
-      <section className="py-16 bg-gray-900 text-white">
+      <section className="py-16 bg-brand-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Most digital business owners have a systems problem, not a sales problem.</h2>
           <div className="text-gray-300 space-y-4 text-lg leading-relaxed text-left">
@@ -242,7 +242,7 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-brand-900 text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Your business shouldn&apos;t depend on you being available 24/7.</h2>
           <p className="text-gray-300 text-lg mb-8">Let&apos;s build the system that works when you don&apos;t.</p>

@@ -56,7 +56,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </article>
 
       {/* END CTA */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-brand-900 text-white text-center">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-3">Want us to build this for you?</h2>
           <p className="text-gray-400 mb-6">Book a free strategy session and we&apos;ll design a custom automation system for your business.</p>

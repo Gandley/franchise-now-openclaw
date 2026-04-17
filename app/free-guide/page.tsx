@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function FreeGuidePage() {
   return (
     <>
-      <section className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white py-20">
+      <section className="min-h-screen bg-gradient-to-b from-brand-900 to-brand-800 text-white py-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block bg-yellow-400 text-yellow-900 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
             FREE GUIDE — Instant Access

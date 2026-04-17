@@ -39,7 +39,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* PRE-HEADLINE */}
-      <div className="bg-gray-900 text-gray-300 py-3 text-center text-sm">
+      <div className="bg-brand-900 text-gray-300 py-3 text-center text-sm">
         If you&apos;re a digital business owner who&apos;s tired of losing leads and doing follow-up manually — read this carefully.
       </div>
 
@@ -274,7 +274,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FUTURE VISUALIZATION */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-brand-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-6">Imagine 90 days from now...</h2>
           <div className="text-gray-300 text-lg leading-relaxed space-y-4">

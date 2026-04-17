@@ -25,7 +25,7 @@ export default function ThankYouPage() {
       </section>
 
       {/* UPSELL */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-brand-900 text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block bg-yellow-400 text-yellow-900 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
             One More Thing...

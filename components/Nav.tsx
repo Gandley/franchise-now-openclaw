@@ -31,7 +31,7 @@ export default function Nav() {
           >
             <div className="w-6 h-0.5 bg-gray-900 mb-1.5"></div>
             <div className="w-6 h-0.5 bg-gray-900 mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-gray-900"></div>
+            <div className="w-6 h-0.5 bg-brand-900"></div>
           </button>
         </div>
 
