@@ -52,14 +52,12 @@ export default function ServicesPage() {
             >
               Book a Consultation
             </a>
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="btn-secondary text-lg"
             >
               Start With the Free Course
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -378,14 +376,12 @@ export default function ServicesPage() {
             >
               Book a 15-Minute Consultation
             </a>
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
             >
               Not Ready? Start With the Free Course
-            </a>
+            </Link>
           </div>
           <p className="text-gray-500 text-sm mt-6">We take on a limited number of new clients per month to maintain quality.</p>
         </div>

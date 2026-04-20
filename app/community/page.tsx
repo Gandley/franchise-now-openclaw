@@ -123,14 +123,12 @@ export default function CommunityPage() {
           <p className="text-brand-100 text-lg mb-8">
             The AI Operator Course is the best foundation for getting value from this community. Start there, then join the conversation.
           </p>
-          <a 
-            href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            href="/get-access"
             className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
           >
             Start Free With the Course
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -150,14 +148,12 @@ export default function CommunityPage() {
             >
               Book a 15-Minute Consultation
             </a>
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="btn-secondary text-lg"
             >
               Not Ready? Start With the Free Course
-            </a>
+            </Link>
           </div>
         </div>
       </section>

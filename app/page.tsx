@@ -87,14 +87,12 @@ export default function HomePage() {
             Franchise Now helps lean businesses deploy trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="btn-primary text-lg"
             >
               Start Free With the AI Operator Course
-            </a>
+            </Link>
             <a 
               href="https://calendly.com/noah-franchisenow/30min" 
               target="_blank" 
@@ -247,16 +245,14 @@ export default function HomePage() {
                 </li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <Link 
+                  href="/get-access"
                   className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors text-center"
                 >
                   Get the Free Course
-                </a>
+                </Link>
                 <Link 
-                  href="/community" 
+                  href="/get-access" 
                   className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors text-center"
                 >
                   Join the Community
@@ -288,14 +284,12 @@ export default function HomePage() {
             >
               Book a 15-Minute Consultation
             </a>
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="btn-secondary text-lg"
             >
               Not Ready? Start With the Free Course
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -406,14 +400,12 @@ export default function HomePage() {
             Install AI operators that work while you focus on what matters.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors text-lg"
             >
               Start Free With the Course
-            </a>
+            </Link>
             <a 
               href="https://calendly.com/noah-franchisenow/30min" 
               target="_blank" 

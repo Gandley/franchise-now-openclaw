@@ -24,14 +24,12 @@ export default function FreeCoursePage() {
           <p className="text-brand-200 mb-10 max-w-2xl mx-auto">
             Learn how to build AI-powered offers, install internal business agents, and direct AI operators in a real business context.
           </p>
-          <a 
-            href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            href="/get-access"
             className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
           >
             Start Free With the Course
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -161,16 +159,14 @@ export default function FreeCoursePage() {
             Whether you want to build it yourself, do it with guidance, or have us help install it for you — this course gives you the foundation to make that decision.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/get-access"
               className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
             >
               Get the Free Course
-            </a>
+            </Link>
             <Link 
-              href="/community" 
+              href="/get-access" 
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
             >
               Join the Community
