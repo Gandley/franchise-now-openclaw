@@ -4,8 +4,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Franchise Now | AI Automation for Digital Business Owners',
-  description: 'We build, install, and manage custom AI automations that help entrepreneurs automate lead handling, follow-up, and appointment booking. No tech headaches. Just results.',
+  title: 'Franchise Now | AI Workforce for Lean Businesses',
+  description: 'Install your first AI workforce — trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.',
 }
 
 export default function RootLayout({

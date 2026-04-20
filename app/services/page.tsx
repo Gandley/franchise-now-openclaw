@@ -3,8 +3,8 @@ import TestimonialCard from '@/components/TestimonialCard'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'OpenClaw Growth System | Done-For-You AI Automation | Franchise Now',
-  description: 'We build and manage custom AI automation systems that capture leads, automate follow-up, and fill your calendar — without you touching the tech. Starting at $1,500.',
+  title: 'What We Build | AI Workforce Installation | Franchise Now',
+  description: 'We install AI operators that grow revenue, support customers, and run operations — trained agents that work 24/7 inside the tools you already use.',
 }
 
 const testimonials = [
@@ -23,54 +23,61 @@ const testimonials = [
     name: "Amanda K.",
     role: "Digital Business Owner",
   },
-  {
-    quote: "We went from inconsistent outreach and missed messages to a streamlined system that actually converts. The biggest difference is speed—leads get hit immediately, and that alone has increased our booked calls.",
-    name: "Daniel R.",
-    role: "Course Creator",
-  },
-  {
-    quote: "I knew I needed automation but had no idea where to start. The system they built for me took over lead handling completely. Now people are getting responses, reminders, and booking links automatically—it's saved me hours every week.",
-    name: "Sarah L.",
-    role: "Online Coach",
-  },
 ]
 
 export default function ServicesPage() {
   return (
     <>
-      {/* PRE-HEADLINE */}
-      <div className="bg-brand-900 text-gray-300 py-3 text-center text-sm">
-        If you&apos;re a digital business owner who&apos;s tired of losing leads and doing follow-up manually — read this carefully.
-      </div>
-
       {/* HERO */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-block bg-brand-100 text-brand-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+            Implementation Services
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            What If Every Lead That Came Into Your Business Got Followed Up With Instantly —{' '}
-            <span className="text-brand-600">Without You Lifting a Finger?</span>
+            We Install AI Operators That Do Real Work
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-            We design, build, and manage custom AI automation systems that capture leads, respond automatically, and book appointments on your calendar — so you can focus on what you&apos;re actually good at.
+          <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
+            Trained AI operators that grow revenue, support customers, and run operations — customized to work inside the software your business already uses.
           </p>
-          <Link href="/book" className="btn-primary text-lg">Apply to Work With Us</Link>
+          <p className="text-gray-500 mb-10 max-w-2xl mx-auto">
+            Built and deployed using <strong>OpenClaw</strong>, the AI platform that makes AI operators actually work inside your existing tools.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="https://calendly.com/noah-franchisenow/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-primary text-lg"
+            >
+              Book a Consultation
+            </a>
+            <a 
+              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-secondary text-lg"
+            >
+              Start With the Free Course
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* PROBLEM */}
+      {/* THE PROBLEM */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">You&apos;re working harder than you should be. And your leads are paying for it.</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">You're doing work that should be handled by operators.</h2>
           <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-            <p>A lead comes in through your website, social media, or referral. You&apos;re busy. You don&apos;t respond immediately. By the time you follow up — hours or even a day later — they&apos;ve already moved on.</p>
-            <p>You lose the client. Not because your offer was bad. Because your system failed them. And it happens over and over again.</p>
+            <p>Most businesses are still running on manual processes — following up with leads, answering the same questions, routing tasks between team members, updating records.</p>
+            <p>AI tools have promised to help, but most of them just give advice. They don't actually <em>do</em> the work.</p>
             <p>Meanwhile:</p>
             <ul className="space-y-2 pl-4">
               {[
-                "You're still manually sending follow-up messages",
-                "You're still chasing people who showed interest two weeks ago",
-                "You're still spending time on admin that should be automated",
-                "Your competitors who figured this out are booking calls you should be getting",
+                "Leads come in and don't get followed up with fast enough",
+                "Customer questions pile up while you're focused elsewhere",
+                "Internal coordination takes hours that should take minutes",
+                "You're hiring people to do work that software could handle",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <span className="text-red-500 font-bold mt-1">→</span>
@@ -78,92 +85,158 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
-            <p className="font-bold text-gray-900 text-xl pt-2">You don&apos;t have a sales problem. You have a systems problem.</p>
+            <p className="font-bold text-gray-900 text-xl pt-2">You don't need more headcount. You need AI operators.</p>
           </div>
         </div>
       </section>
 
-      {/* MECHANISM */}
+      {/* WHAT IS OPENCLAW */}
       <section className="py-16 bg-brand-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">There&apos;s a better way — and it doesn&apos;t require you to become a tech expert.</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">What is OpenClaw?</h2>
           <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-            <p>AI automation, when properly configured for your specific business, removes the human bottleneck from the parts of your business that don&apos;t require a human.</p>
-            <div className="bg-white border border-brand-200 rounded-xl p-6 text-center font-medium text-brand-700">
-              Lead comes in → System responds instantly → Follow-up sent automatically → Appointment booked → You get notified when it&apos;s time to show up.
-            </div>
-            <p>That&apos;s not a fantasy. That&apos;s what a working automation system looks like.</p>
-            <p>We use <strong>OpenClaw</strong> — a powerful AI agent platform — to build custom automation systems tailored to your business. We map your actual lead flow, identify where people fall out, and build a system that plugs those gaps.</p>
+            <p><strong>OpenClaw</strong> is the AI platform we use to build, train, and deploy AI operators inside your business.</p>
+            <p>Think of it as the engine under the hood — the tool that makes AI operators actually work inside the software you already use. Instead of adding another tool to your stack, OpenClaw connects to your existing systems and creates trained agents that take action.</p>
+            <p>We don't just set up software. We configure, train, and manage AI operators that understand your business context and can be directed to improve over time.</p>
           </div>
         </div>
       </section>
 
-      {/* WHAT'S INCLUDED */}
+      {/* THREE PILLARS - WHAT WE BUILD */}
       <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="section-heading">What We Build</h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              AI operators across three core business functions — each customized to your specific workflows and tools.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* GROW */}
+            <div className="bg-gray-50 rounded-xl p-8">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">📈</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Growth Operators</h3>
+              <p className="text-gray-600 mb-4">AI operators that find, qualify, and convert opportunities into revenue.</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">•</span>
+                  <span>Lead response & qualification</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">•</span>
+                  <span>Follow-up sequences</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">•</span>
+                  <span>Reactivation campaigns</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">•</span>
+                  <span>Appointment booking</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* SERVE */}
+            <div className="bg-gray-50 rounded-xl p-8">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">🤝</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Customer Success Operators</h3>
+              <p className="text-gray-600 mb-4">AI operators that onboard, support, and retain your customers.</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Client onboarding</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Customer success check-ins</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>FAQs & support triage</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Retention communication</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* OPERATE */}
+            <div className="bg-gray-50 rounded-xl p-8">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">⚙️</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Operations Operators</h3>
+              <p className="text-gray-600 mb-4">AI operators that run internal workflows and coordinate your back office.</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Internal task routing</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Status updates & reporting</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Back-office coordination</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Execution assistance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Here&apos;s exactly what we build for you.</h2>
+          <div className="text-center mb-12">
+            <h2 className="section-heading">How We Work Together</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                phase: 'Phase 1',
-                title: 'Strategy & Mapping',
-                color: 'bg-blue-50 border-blue-200',
-                items: [
-                  'Discovery call to map your current lead flow',
-                  'Identify top 3 automation opportunities',
-                  'Custom automation blueprint for your business',
-                ],
+                step: '01',
+                title: 'Discovery & Blueprint',
+                desc: "We map your current workflows, identify where AI operators can take over, and design a custom deployment plan for your business.",
               },
               {
-                phase: 'Phase 2',
-                title: 'Build & Install',
-                color: 'bg-green-50 border-green-200',
-                items: [
-                  'Full OpenClaw automation setup',
-                  'Lead capture integration',
-                  'Automated follow-up sequences',
-                  'Appointment booking optimization',
-                  'Client communication automation',
-                  'Tech stack integration + QA testing',
-                ],
+                step: '02',
+                title: 'Build & Train',
+                desc: 'We build your AI operators using OpenClaw, train them on your specific processes, and integrate them with your existing tools.',
               },
               {
-                phase: 'Phase 3',
-                title: 'Management & Optimization',
-                color: 'bg-purple-50 border-purple-200',
-                items: [
-                  'Monthly performance reviews',
-                  'System optimization based on results',
-                  'New automations as your business grows',
-                  'Priority support and direct team access',
-                ],
+                step: '03',
+                title: 'Deploy & Optimize',
+                desc: 'Your operators go live and start working. We monitor performance, make adjustments, and add new capabilities over time.',
               },
-            ].map((p, i) => (
-              <div key={i} className={`border rounded-xl p-6 ${p.color}`}>
-                <div className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-1">{p.phase}</div>
-                <h3 className="font-bold text-gray-900 text-xl mb-4">{p.title}</h3>
-                <ul className="space-y-2">
-                  {p.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-2 text-gray-700 text-sm">
-                      <span className="text-green-500 font-bold mt-0.5">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            ].map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="w-12 h-12 bg-brand-600 text-white font-bold text-lg rounded-full flex items-center justify-center mx-auto mb-4">
+                  {s.step}
+                </div>
+                <h3 className="font-bold text-gray-900 text-xl mb-3">{s.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{s.desc}</p>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/book" className="btn-primary text-lg">Apply to Work With Us</Link>
           </div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">This is what clients say after the system is running.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Results from real operators.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
               <TestimonialCard key={i} {...t} />
             ))}
@@ -172,18 +245,18 @@ export default function ServicesPage() {
       </section>
 
       {/* WHO IT'S FOR / NOT FOR */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
               <h3 className="font-bold text-gray-900 text-2xl mb-6">This is the right fit if...</h3>
               <ul className="space-y-3">
                 {[
-                  "You're a coach, consultant, agency owner, or digital service provider",
-                  "You have leads coming in but aren't converting them consistently",
-                  "You want AI working in your business — without doing the setup yourself",
-                  "You're serious about growth and ready to invest in a system that compounds",
-                  "You want a strategic partner, not just a tech vendor",
+                  "You're an agency, consultant, coach, or service business owner",
+                  "You run a lean team and need output without adding headcount",
+                  "You want AI operators that take action, not just give advice",
+                  "You're comfortable with technology but don't want to build it yourself",
+                  "You want leverage, not complexity",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="text-green-500 font-bold text-lg mt-0.5">✓</span>
@@ -197,7 +270,7 @@ export default function ServicesPage() {
               <ul className="space-y-3">
                 {[
                   "You're looking for a quick fix with no investment",
-                  "You have no existing offer or audience",
+                  "You have no existing business or workflows to automate",
                   "You want to manage the tech yourself",
                   "You're not ready to move within the next 30 days",
                 ].map((item, i) => (
@@ -213,56 +286,70 @@ export default function ServicesPage() {
       </section>
 
       {/* PRICING */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Here&apos;s how we work together.</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Investment</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Option A</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Setup Package</h3>
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8">
+              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Setup</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">Operator Installation</h3>
               <div className="text-3xl font-bold text-brand-600 mb-4">Starting at $1,500</div>
-              <p className="text-gray-600 mb-6 text-sm">Get your automation system built and running. Perfect if you want to manage ongoing optimization yourself.</p>
+              <p className="text-gray-600 mb-6 text-sm">Complete build and deployment of your first AI operator. Perfect if you want to manage ongoing optimization yourself.</p>
               <ul className="space-y-2 text-sm text-gray-700 mb-8">
-                {['Full strategy and blueprint', 'Complete build and installation', 'Testing and launch support', '30-day post-launch support'].map((item, i) => (
+                {['Discovery and workflow mapping', 'Custom operator build', 'Integration with your tools', 'Training and deployment', '30-day post-launch support'].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <span className="text-green-500">✓</span> {item}
                   </li>
                 ))}
               </ul>
-              <Link href="/book" className="btn-secondary w-full block text-center">Book a Call to Start</Link>
+              <a 
+                href="https://calendly.com/noah-franchisenow/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-secondary w-full block text-center"
+              >
+                Book a Call
+              </a>
             </div>
             <div className="bg-brand-600 text-white rounded-xl p-8 shadow-lg relative">
               <div className="absolute -top-3 right-6 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</div>
-              <div className="text-sm font-semibold text-brand-200 uppercase tracking-wide mb-2">Option B</div>
-              <h3 className="text-2xl font-bold mb-1">Setup + Management</h3>
+              <div className="text-sm font-semibold text-brand-200 uppercase tracking-wide mb-2">Setup + Management</div>
+              <h3 className="text-2xl font-bold mb-1">Full Service</h3>
               <div className="text-3xl font-bold mb-1">$1,500 setup</div>
               <div className="text-xl font-semibold text-brand-200 mb-4">+ $1,500/month</div>
-              <p className="text-brand-100 mb-6 text-sm">Your system, built and managed every month. We handle it all so you can stay focused on your business.</p>
+              <p className="text-brand-100 mb-6 text-sm">Your AI workforce, built and managed. We handle training, optimization, and expansion so you can stay focused on your business.</p>
               <ul className="space-y-2 text-sm text-brand-100 mb-8">
-                {['Everything in Setup Package', 'Monthly performance reviews', 'Ongoing optimization and improvements', 'New automations as you grow', 'Priority support'].map((item, i) => (
+                {['Everything in Setup', 'Monthly performance reviews', 'Ongoing operator training', 'New operators as you grow', 'Priority support'].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <span className="text-yellow-300">✓</span> {item}
                   </li>
                 ))}
               </ul>
-              <Link href="/book" className="block text-center bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors">Apply Now</Link>
+              <a 
+                href="https://calendly.com/noah-franchisenow/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-center bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors"
+              >
+                Apply Now
+              </a>
             </div>
           </div>
-          <p className="text-center text-gray-500 text-sm mt-6">Not sure which is right? Book a call and we&apos;ll tell you exactly what your business needs.</p>
+          <p className="text-center text-gray-500 text-sm mt-6">Not sure which is right? Book a consultation and we'll tell you exactly what your business needs.</p>
         </div>
       </section>
 
-      {/* OBJECTIONS */}
-      <section className="py-20 bg-white">
+      {/* FAQ */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Questions we hear often.</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Common Questions</h2>
           <div className="space-y-6">
             {[
-              { q: "I've tried automation tools before and they didn't work.", a: "Most tools fail because they're not set up correctly. Off-the-shelf tools with no customization rarely work. We don't hand you a tool — we build a system configured specifically for your business and make sure it actually runs." },
-              { q: "I don't know if I have enough leads to make this worth it.", a: "If you have even a trickle of inbound interest — inquiries, DMs, form submissions — automation will convert more of them into calls. You don't need massive volume to see results. You need the right system." },
-              { q: "I'm not technical. Will I be able to use this?", a: "Yes. That's the whole point. You don't touch the tech. We build it, we run it, we manage it. You just see the leads come through and the calls appear on your calendar." },
-              { q: "How long before I see results?", a: "Most clients see the system working within the first 2–3 weeks after launch. The system improves over time as we optimize based on real data." },
-              { q: "Is there a contract?", a: "Setup work is project-based. Management retainers are month-to-month after an initial commitment period. We're not interested in trapping clients who aren't getting results." },
+              { q: "What exactly is an AI operator?", a: "An AI operator is a trained AI system that takes action inside your business — not just giving advice, but actually doing work. It can send messages, update records, route tasks, and follow workflows you define. Think of it as a digital team member that works 24/7." },
+              { q: "How is this different from chatbots or automation tools?", a: "Most tools give you building blocks. We give you trained operators that are ready to work. We don't just set up software — we configure, train, and manage AI agents that understand your business context and can be directed to improve over time." },
+              { q: "Do I need technical experience?", a: "None. We handle the build, training, and deployment. You describe what you need done, and we create the operator to do it. You direct it, we maintain it." },
+              { q: "How long does it take to get an operator running?", a: "Most operators are live within 2–3 weeks of our strategy session. Complex multi-step workflows may take longer, but we'll give you a clear timeline upfront." },
+              { q: "What tools do you integrate with?", a: "We use OpenClaw to connect with your existing tech stack — CRMs, email platforms, calendars, project management tools, and more. We work inside the tools you already use." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-gray-200 pb-6">
                 <h3 className="font-bold text-gray-900 text-lg mb-2">{faq.q}</h3>
@@ -273,31 +360,34 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FUTURE VISUALIZATION */}
+      {/* FINAL CTA */}
       <section className="py-20 bg-brand-900 text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-6">Imagine 90 days from now...</h2>
-          <div className="text-gray-300 text-lg leading-relaxed space-y-4">
-            <p>You open your calendar Monday morning and there are 4 strategy calls booked — all from leads that came in over the weekend, got followed up with automatically, and scheduled themselves.</p>
-            <p>You didn&apos;t touch any of it.</p>
-            <p>Your follow-up sequence is running. Your lead capture is working. Your appointment booking is converting.</p>
-            <p>You&apos;re spending your time on client calls and delivering results — not chasing leads, writing follow-up emails at midnight, or wondering why someone went cold.</p>
-            <p className="text-white font-semibold text-xl">This is what&apos;s available to you. The only question is how soon you want to get there.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* URGENCY + FINAL CTA */}
-      <section className="py-20 bg-brand-600 text-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">We take on a limited number of new clients per month.</h2>
-          <p className="text-brand-100 text-lg mb-8">Our process requires deep work on each client&apos;s system. We don&apos;t run an assembly line. If you&apos;re ready to move — book your session now.</p>
-          <Link href="/book" className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-5 rounded-lg transition-colors text-xl">
-            Apply to Work With Us →
-          </Link>
-          <p className="text-brand-200 text-sm mt-4">
-            What happens next: You book a call. We review your setup, identify your top automation opportunity, and tell you exactly what we&apos;d build. No obligation.
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to install your first AI operator?
+          </h2>
+          <p className="text-gray-300 text-lg mb-10">
+            Book a 15-minute consultation. We'll map out exactly what an AI workforce could look like in your business.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="https://calendly.com/noah-franchisenow/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
+            >
+              Book a 15-Minute Consultation
+            </a>
+            <a 
+              href="https://checkout.thrivecart.com/franchise-now-ai-operator-course/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
+            >
+              Not Ready? Start With the Free Course
+            </a>
+          </div>
+          <p className="text-gray-500 text-sm mt-6">We take on a limited number of new clients per month to maintain quality.</p>
         </div>
       </section>
     </>
