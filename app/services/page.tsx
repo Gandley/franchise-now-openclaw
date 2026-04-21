@@ -44,14 +44,12 @@ export default function ServicesPage() {
             Built and deployed using <strong>OpenClaw</strong>, the AI platform that makes AI operators actually work inside your existing tools.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="btn-primary text-lg"
             >
               Book a Consultation
-            </a>
+            </Link>
             <Link 
               href="/get-access"
               className="btn-secondary text-lg"
@@ -300,14 +298,12 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <a 
-                href="https://calendly.com/noah-franchisenow/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href="/book-call"
                 className="btn-secondary w-full block text-center"
               >
                 Book a Call
-              </a>
+              </Link>
             </div>
             <div className="bg-brand-600 text-white rounded-xl p-8 shadow-lg relative">
               <div className="absolute -top-3 right-6 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</div>
@@ -323,14 +319,12 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <a 
-                href="https://calendly.com/noah-franchisenow/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href="/book-call"
                 className="block text-center bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors"
               >
                 Apply Now
-              </a>
+              </Link>
             </div>
           </div>
           <p className="text-center text-gray-500 text-sm mt-6">Not sure which is right? Book a consultation and we'll tell you exactly what your business needs.</p>
@@ -368,14 +362,12 @@ export default function ServicesPage() {
             Book a 15-minute consultation. We'll map out exactly what an AI workforce could look like in your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
             >
               Book a 15-Minute Consultation
-            </a>
+            </Link>
             <Link 
               href="/get-access"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-10 py-4 rounded-lg transition-colors text-lg"

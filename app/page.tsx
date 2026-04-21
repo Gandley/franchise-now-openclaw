@@ -87,14 +87,12 @@ export default function HomePage() {
             Franchise Now helps lean businesses deploy trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.
           </p>
           <div className="flex justify-center">
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-12 py-5 rounded-lg transition-colors text-xl shadow-lg"
             >
               Book a 15-Minute Consultation
-            </a>
+            </Link>
           </div>
           <p className="text-sm text-gray-400 mt-6">We teach it. We build it. We use it ourselves.</p>
         </div>
@@ -264,14 +262,12 @@ export default function HomePage() {
             If you already know what you want, skip the learning curve. Book a 15-minute consultation and we'll walk you through what an AI workforce could look like in your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="btn-primary text-lg"
             >
               Book a 15-Minute Consultation
-            </a>
+            </Link>
             <Link 
               href="/get-access"
               className="btn-secondary text-lg"
@@ -394,14 +390,12 @@ export default function HomePage() {
             >
               Start Free With the Course
             </Link>
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors text-lg"
             >
               Talk to Us About Implementation
-            </a>
+            </Link>
           </div>
           <p className="text-gray-500 text-sm mt-6">We take on a limited number of new clients per month to maintain quality.</p>
         </div>

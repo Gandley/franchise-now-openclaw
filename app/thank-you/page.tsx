@@ -49,14 +49,12 @@ export default function ThankYouPage() {
             >
               Back to Homepage
             </Link>
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors"
             >
               Book a Strategy Call
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -91,14 +89,12 @@ export default function ThankYouPage() {
             </ul>
             <p className="mt-6">
               Still can't find it? Try signing up again or{' '}
-              <a 
-                href="https://calendly.com/noah-franchisenow/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href="/book-call"
                 className="text-brand-600 hover:underline"
               >
                 book a call
-              </a>{' '}
+              </Link>{' '}
               and we'll help you out.
             </p>
           </div>

@@ -140,14 +140,12 @@ export default function CommunityPage() {
             If you want us to build and install your AI workforce directly, book a consultation. We'll map out exactly what operators would work best for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="btn-primary text-lg"
             >
               Book a 15-Minute Consultation
-            </a>
+            </Link>
             <Link 
               href="/get-access"
               className="btn-secondary text-lg"

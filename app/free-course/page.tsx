@@ -183,14 +183,12 @@ export default function FreeCoursePage() {
             If you'd rather skip the learning curve and have us install your AI workforce directly, book a consultation. We'll map out exactly what operators would work best for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="btn-primary text-lg"
             >
               Book a 15-Minute Consultation
-            </a>
+            </Link>
           </div>
         </div>
       </section>
