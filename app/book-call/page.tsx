@@ -14,27 +14,63 @@ export default function BookCallPage() {
     const form = e.currentTarget
     const formData = new FormData(form)
     
+    const firstName = formData.get('firstname') as string
+    const lastName = formData.get('lastname') as string
+    const email = formData.get('email') as string
+    const phone = formData.get('phone') as string
+    const businessInfo = formData.get('business') as string
+    
     try {
-      // Submit to ActiveCampaign
-      await fetch('https://franchisenow.activehosted.com/proc.php', {
+      // Submit to ActiveCampaign API v3
+      const response = await fetch('https://franchisenow.api-us1.com/api/3/contact/sync', {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors',
+        headers: {
+          'Api-Token': '0c1b5f11d0c66ff62672ec8f80a1374d1ccf650a6ebe75fd82236856993fe274eed1600d',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contact: {
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone || '',
+            fieldValues: [
+              {
+                field: '2',
+                value: businessInfo
+              }
+            ]
+          },
+          contactLists: [
+            {
+              list: '3',
+              status: '1'
+            }
+          ],
+          contactTags: [
+            {
+              tag: '5'
+            }
+          ]
+        }),
       })
       
       // Show success state
       setIsSubmitted(true)
       
-      // Redirect to Calendly after brief delay
+      // Redirect to Calendly with pre-filled data
+      const calendlyUrl = `https://calendly.com/noah-franchisenow/30min?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName + ' ' + lastName)}`
       setTimeout(() => {
-        window.location.href = 'https://calendly.com/noah-franchisenow/30min'
-      }, 2000)
+        window.location.href = calendlyUrl
+      }, 1500)
     } catch (error) {
       console.error('Form submission error:', error)
+      // Still redirect to Calendly even if AC fails
       setIsSubmitted(true)
+      const calendlyUrl = `https://calendly.com/noah-franchisenow/30min?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName + ' ' + lastName)}`
       setTimeout(() => {
-        window.location.href = 'https://calendly.com/noah-franchisenow/30min'
-      }, 2000)
+        window.location.href = calendlyUrl
+      }, 1500)
     }
   }
 
@@ -112,16 +148,7 @@ export default function BookCallPage() {
               Fill out the form below, then pick a time on the next page.
             </p>
 
-            {/* ActiveCampaign Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="u" value="2" />
-              <input type="hidden" name="f" value="2" />
-              <input type="hidden" name="s" value="" />
-              <input type="hidden" name="c" value="0" />
-              <input type="hidden" name="m" value="0" />
-              <input type="hidden" name="act" value="sub" />
-              <input type="hidden" name="v" value="2" />
-
               {/* First Name */}
               <div>
                 <label htmlFor="firstname" className="block text-sm font-medium text-gray-700 mb-1">
@@ -183,12 +210,12 @@ export default function BookCallPage() {
 
               {/* Business Info */}
               <div>
-                <label htmlFor="field[1]" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-1">
                   Tell us about your business <span className="text-red-500">*</span>
                 </label>
                 <textarea
-                  id="field[1]"
-                  name="field[1]"
+                  id="business"
+                  name="business"
                   rows={4}
                   placeholder="What do you do? What challenges are you facing? What are your goals?"
                   required
