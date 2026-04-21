@@ -66,6 +66,7 @@ export default function GetAccessPage() {
                 <input type="hidden" name="act" value="sub" />
                 <input type="hidden" name="v" value="2" />
                 <input type="hidden" name="or" value="" />
+                <input type="hidden" name="redirect" value="https://franchise-now-openclaw-gandleys-projects.vercel.app/thank-you" />
 
                 <div className="space-y-6">
                   {/* First Name */}

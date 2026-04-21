@@ -1,49 +1,107 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "You're In! | Franchise Now",
-  description: 'Your AI Automation Playbook is on its way. Check your inbox.',
+  title: 'Welcome! | Franchise Now',
+  description: 'Thank you for signing up! Check your email for your Discord invite.',
 }
 
 export default function ThankYouPage() {
   return (
     <>
-      <section className="py-24 bg-gradient-to-b from-brand-50 to-white text-center">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* HERO */}
+      <section className="bg-gradient-to-b from-brand-600 to-brand-700 text-white py-20 md:py-28">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-6xl mb-6">🎉</div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">You&apos;re in. Here&apos;s your access.</h1>
-          <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-            Check your inbox — your copy of <strong>The AI Automation Playbook</strong> is on its way.
-            <br />
-            <span className="text-sm text-gray-400">(Check spam if you don&apos;t see it in 5 minutes.)</span>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Welcome to the Community!
+          </h1>
+          <p className="text-xl text-brand-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Check your email for your Discord invite. If you don't see it in a few minutes, check your spam folder.
           </p>
-          <Link href="#" className="btn-primary text-lg mb-12 inline-block">
-            → Download the Playbook Directly
-          </Link>
+          
+          <div className="bg-brand-700 rounded-xl p-6 max-w-lg mx-auto mb-8">
+            <h2 className="text-xl font-bold mb-4">What's Next?</h2>
+            <ul className="text-left text-brand-100 space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="text-white font-bold">1.</span>
+                <span>Check your email for the Discord invite</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-white font-bold">2.</span>
+                <span>Join the Discord server</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-white font-bold">3.</span>
+                <span>Access the AI Operator Course materials</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-white font-bold">4.</span>
+                <span>Introduce yourself in the community</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/"
+              className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors"
+            >
+              Back to Homepage
+            </Link>
+            <a 
+              href="https://calendly.com/noah-franchisenow/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors"
+            >
+              Book a Strategy Call
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* UPSELL */}
-      <section className="py-20 bg-brand-900 text-white">
+      {/* EMAIL TROUBLESHOOTING */}
+      <section className="py-16 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block bg-yellow-400 text-yellow-900 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
-            One More Thing...
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Didn't get the email?
+          </h2>
+          <div className="text-gray-600 space-y-4">
+            <p>
+              Sometimes emails end up in spam or promotions folders. Here's what to check:
+            </p>
+            <ul className="text-left inline-block space-y-2">
+              <li className="flex items-center gap-2">
+                <span className="text-brand-500">•</span>
+                <span>Check your spam/junk folder</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-brand-500">•</span>
+                <span>Look in Gmail's Promotions tab</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-brand-500">•</span>
+                <span>Search for "Franchise Now" in your email</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-brand-500">•</span>
+                <span>Wait 5-10 minutes (sometimes there's a delay)</span>
+              </li>
+            </ul>
+            <p className="mt-6">
+              Still can't find it? Try signing up again or{' '}
+              <a 
+                href="https://calendly.com/noah-franchisenow/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-brand-600 hover:underline"
+              >
+                book a call
+              </a>{' '}
+              and we'll help you out.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Want us to build this for you?</h2>
-          <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            The playbook gives you the map. But if you&apos;d rather have someone build the system while you run your business — that&apos;s exactly what we do.
-          </p>
-          <p className="text-gray-400 mb-8 leading-relaxed">
-            We build, install, and manage custom AI automations for digital business owners. Lead capture. Follow-up. Appointment booking. All of it.
-          </p>
-          <p className="text-white font-semibold text-lg mb-6">If that sounds like what you need:</p>
-          <Link href="/book" className="inline-block bg-white text-gray-900 hover:bg-gray-100 font-bold px-10 py-5 rounded-lg transition-colors text-xl">
-            Book a Free 30-Minute Strategy Call →
-          </Link>
-          <p className="text-gray-500 text-sm mt-4">
-            No pitch. We&apos;ll look at your business, identify your best automation opportunity, and tell you exactly what we&apos;d build. Whether or not you work with us after that is entirely up to you.
-          </p>
         </div>
       </section>
     </>
