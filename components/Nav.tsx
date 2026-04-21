@@ -18,6 +18,7 @@ export default function Nav() {
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</Link>
             <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">What We Build</Link>
+            <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Blog</Link>
             <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Free Course & Community</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">About</Link>
             <Link 
@@ -45,6 +46,7 @@ export default function Nav() {
           <div className="md:hidden pb-4 flex flex-col gap-4">
             <Link href="/" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Home</Link>
             <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>What We Build</Link>
+            <Link href="/blog" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Blog</Link>
             <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course & Community</Link>
             <Link href="/about" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>About</Link>
             <Link 

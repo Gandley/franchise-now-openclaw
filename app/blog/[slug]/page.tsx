@@ -1,68 +1,136 @@
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import { getPostBySlug, getAllPosts } from '../lib/posts'
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+interface Props {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const post = getPostBySlug(slug)
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found | Franchise Now',
+    }
+  }
+
+  return {
+    title: `${post.title} | Franchise Now Blog`,
+    description: post.excerpt,
+  }
+}
+
+export async function generateStaticParams() {
+  const posts = getAllPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params
+  const post = getPostBySlug(slug)
+
+  if (!post) {
+    notFound()
+  }
+
   return (
     <>
-      <article className="py-16 bg-white">
+      {/* ARTICLE HEADER */}
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
           <div className="mb-8">
-            <div className="text-xs font-semibold text-brand-600 uppercase tracking-wide mb-3">AI Automation</div>
-            <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-4">
-              Blog Post Title Goes Here — {params.slug}
-            </h1>
-            <div className="flex items-center gap-4 text-sm text-gray-400 mb-6">
-              <span>Franchise Now Team</span>
-              <span>·</span>
-              <span>April 2026</span>
-              <span>·</span>
-              <span>7 min read</span>
-            </div>
-            {/* Featured image placeholder */}
-            <div className="w-full h-64 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400 mb-8">
-              [Featured Image Placeholder]
-            </div>
+            <Link 
+              href="/blog"
+              className="text-brand-600 hover:text-brand-700 font-medium"
+            >
+              ← Back to Blog
+            </Link>
           </div>
-
-          {/* Body */}
-          <div className="prose prose-lg max-w-none text-gray-700 space-y-5">
-            <p>This is the blog post content area. Each post follows a structured template optimized for SEO and conversion. Posts are designed to educate, build trust, and guide readers toward booking a call or downloading the free guide.</p>
-
-            <h2 className="text-2xl font-bold text-gray-900">Section Heading (H2)</h2>
-            <p>Content goes here. Posts should be 1,000–2,500 words for authority. Use clear H2 and H3 subheadings, short paragraphs, and bullet points where appropriate.</p>
-
-            {/* MID-POST CTA BANNER */}
-            <div className="bg-brand-50 border border-brand-200 rounded-xl p-6 my-8">
-              <div className="font-bold text-brand-700 text-lg mb-2">📘 Free Download: The AI Automation Playbook</div>
-              <p className="text-brand-600 text-sm mb-4">Learn the 5 highest-ROI automation opportunities for digital business owners.</p>
-              <Link href="/free-guide" className="btn-primary py-2 px-5 text-sm inline-block">Get Instant Free Access →</Link>
-            </div>
-
-            <h2 className="text-2xl font-bold text-gray-900">Another Section (H2)</h2>
-            <p>Continue with post content. Every post should end with a clear next step — either download the guide or book a call.</p>
+          
+          <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+            <span>{post.publishedAt}</span>
+            {post.pillar && (
+              <>
+                <span>•</span>
+                <span className="text-brand-600 font-medium">{post.pillar}</span>
+              </>
+            )}
           </div>
+          
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            {post.title}
+          </h1>
+          
+          <p className="text-xl text-gray-600 leading-relaxed">
+            {post.excerpt}
+          </p>
+          
+          {post.image && (
+            <div className="mt-8 aspect-video bg-gray-200 rounded-xl overflow-hidden">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+        </div>
+      </section>
 
-          {/* AUTHOR BOX */}
-          <div className="border-t border-gray-200 mt-12 pt-8">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center text-gray-400 text-xs">Photo</div>
-              <div>
-                <div className="font-bold text-gray-900">Franchise Now Team</div>
-                <div className="text-sm text-gray-500 mt-1">AI automation specialists helping digital business owners build systems that generate leads, handle follow-up, and fill their calendars automatically.</div>
+      {/* ARTICLE CONTENT */}
+      <section className="py-12 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <article 
+            className="prose prose-lg prose-gray max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+          
+          {/* TAGS */}
+          {post.tags && post.tags.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
+          )}
         </div>
-      </article>
+      </section>
 
-      {/* END CTA */}
-      <section className="py-16 bg-brand-900 text-white text-center">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-3">Want us to build this for you?</h2>
-          <p className="text-gray-400 mb-6">Book a free strategy session and we&apos;ll design a custom automation system for your business.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book" className="btn-primary">Book Your Free Call →</Link>
-            <Link href="/free-guide" className="btn-secondary border-gray-600 text-gray-300 hover:bg-gray-800">Get the Free Guide</Link>
+      {/* CTAs */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-brand-600 text-white rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              {post.primaryCtaCopy || "Ready to implement this in your business?"}
+            </h2>
+            <p className="text-brand-100 mb-8">
+              {post.secondaryCtaCopy || "Book a free strategy session and we'll map out exactly how AI operators could work for you."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/book-call"
+                className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors"
+              >
+                Book a Free Strategy Session
+              </Link>
+              <Link 
+                href="/get-access"
+                className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors"
+              >
+                Start With the Free Course
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -70,18 +138,32 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       {/* RELATED POSTS */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Posts</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: 'Why Your Leads Are Going Cold', slug: 'why-leads-go-cold', cat: 'Lead Generation' },
-              { title: 'What Is AI Automation', slug: 'what-is-ai-automation', cat: 'AI Automation' },
-              { title: '5 Things You Can Automate This Week', slug: 'five-things-to-automate', cat: 'AI Automation' },
-            ].map((p, i) => (
-              <Link key={i} href={`/blog/${p.slug}`} className="block border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
-                <div className="text-xs font-semibold text-brand-600 uppercase tracking-wide mb-2">{p.cat}</div>
-                <div className="font-bold text-gray-900">{p.title}</div>
-              </Link>
-            ))}
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">More Articles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {getAllPosts()
+              .filter((p) => p.slug !== post.slug)
+              .slice(0, 2)
+              .map((relatedPost) => (
+                <article key={relatedPost.slug} className="bg-gray-50 rounded-xl p-6">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                    <span>{relatedPost.publishedAt}</span>
+                    {relatedPost.pillar && (
+                      <>
+                        <span>•</span>
+                        <span className="text-brand-600 font-medium">{relatedPost.pillar}</span>
+                      </>
+                    )}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <Link href={`/blog/${relatedPost.slug}`} className="hover:text-brand-600 transition-colors">
+                      {relatedPost.title}
+                    </Link>
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    {relatedPost.excerpt}
+                  </p>
+                </article>
+              ))}
           </div>
         </div>
       </section>
