@@ -20,14 +20,12 @@ export default function Nav() {
             <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">What We Build</Link>
             <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Free Course & Community</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">About</Link>
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="btn-primary py-2 px-5 text-sm"
             >
               Book a Call
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -49,15 +47,13 @@ export default function Nav() {
             <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>What We Build</Link>
             <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course & Community</Link>
             <Link href="/about" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>About</Link>
-            <a 
-              href="https://calendly.com/noah-franchisenow/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book-call"
               className="btn-primary text-sm text-center"
               onClick={() => setOpen(false)}
             >
               Book a Call
-            </a>
+            </Link>
           </div>
         )}
       </div>

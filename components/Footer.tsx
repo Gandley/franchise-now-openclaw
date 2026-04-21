@@ -20,14 +20,12 @@ export default function Footer() {
               <Link href="/services" className="hover:text-white transition-colors">What We Build</Link>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-              <a 
-                href="https://calendly.com/noah-franchisenow/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href="/book-call"
                 className="hover:text-white transition-colors"
               >
                 Book a Call
-              </a>
+              </Link>
             </div>
           </div>
           <div>
