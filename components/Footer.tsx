@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <div className="mb-3">
-              <Image src="/logo.jpg" alt="Franchise Now" width={52} height={52} className="rounded-full" />
+              <Image src="/logo-white.jpg" alt="Franchise Now" width={52} height={52} className="rounded-full" />
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               We help lean businesses install their first AI workforce — trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.
