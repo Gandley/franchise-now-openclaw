@@ -11,7 +11,7 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <Image src="/logo-black.jpg" alt="Franchise Now" width={44} height={44} className="rounded-full" />
+            <Image src="/logo-black.jpg" alt="Franchise Now" width={56} height={56} className="rounded-full" />
           </Link>
 
           {/* Desktop */}
