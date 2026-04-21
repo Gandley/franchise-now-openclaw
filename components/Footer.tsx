@@ -33,8 +33,7 @@ export default function Footer() {
           <div>
             <div className="font-semibold text-white mb-3">Resources</div>
             <div className="flex flex-col gap-2 text-sm">
-              <Link href="/get-access" className="hover:text-white transition-colors">Free AI Operator Course</Link>
-              <Link href="/get-access" className="hover:text-white transition-colors">Community</Link>
+              <Link href="/get-access" className="hover:text-white transition-colors">Free Course & Community</Link>
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>

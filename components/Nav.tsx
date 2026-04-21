@@ -18,8 +18,7 @@ export default function Nav() {
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</Link>
             <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">What We Build</Link>
-            <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Free Course</Link>
-            <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Community</Link>
+            <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Free Course & Community</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">About</Link>
             <a 
               href="https://calendly.com/noah-franchisenow/30min" 
@@ -48,8 +47,7 @@ export default function Nav() {
           <div className="md:hidden pb-4 flex flex-col gap-4">
             <Link href="/" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Home</Link>
             <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>What We Build</Link>
-            <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course</Link>
-            <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Community</Link>
+            <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course & Community</Link>
             <Link href="/about" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>About</Link>
             <a 
               href="https://calendly.com/noah-franchisenow/30min" 
