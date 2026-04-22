@@ -74,27 +74,71 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO - Dual Path */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block bg-brand-100 text-brand-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+      {/* HERO - Full Bleed Gradient */}
+      <section className="relative bg-gradient-to-br from-brand-900 via-brand-700 to-brand-600 min-h-[85vh] flex items-center">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%)`
+          }} />
+        </div>
+        
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
+          <div className="inline-block bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-5 py-2 rounded-full mb-8 border border-white/20">
             AI Workforce for Lean Businesses
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Install Your First AI Workforce
+          
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-8">
+            Install Your First{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100">
+              AI Workforce
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Franchise Now helps lean businesses deploy trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.
+          
+          <p className="text-xl md:text-2xl text-brand-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Deploy trained AI operators that grow revenue, support customers, and run work 24/7 — without adding headcount.
           </p>
-          <div className="flex justify-center">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               href="/book-call"
-              className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-12 py-5 rounded-lg transition-colors text-xl shadow-lg"
+              className="inline-block bg-white hover:bg-gray-100 text-brand-700 font-bold px-10 py-5 rounded-lg transition-all text-lg shadow-2xl hover:shadow-xl hover:scale-105"
             >
-              Book a 15-Minute Consultation
+              Book a Free Strategy Call
+            </Link>
+            <Link 
+              href="/get-access"
+              className="inline-block bg-transparent hover:bg-white/10 text-white font-bold px-10 py-5 rounded-lg transition-all text-lg border-2 border-white/30 hover:border-white/50"
+            >
+              Start With Free Course
             </Link>
           </div>
-          <p className="text-sm text-gray-400 mt-6">We teach it. We build it. We use it ourselves.</p>
+          
+          <p className="text-sm text-brand-200 mt-8">We teach it. We build it. We use it ourselves.</p>
+          
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 mt-12 text-brand-200 text-sm">
+            <span className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+              2-3 Week Setup
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+              No Tech Experience Needed
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+              24/7 Operation
+            </span>
+          </div>
+        </div>
+        
+        {/* Bottom Wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+          </svg>
         </div>
       </section>
 
