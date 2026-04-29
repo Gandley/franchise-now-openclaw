@@ -85,9 +85,9 @@ async function createOrUpdateContact(email: string, firstName: string, lastName:
   return created?.data?._id || created?._id
 }
 
-async function applyTag(contactId: string, tagId: string) {
+async function applyTag(email: string, tagId: string) {
   return gcRequest(`/tags/fire-tag/${tagId}`, 'POST', {
-    contactId,
+    email,
   })
 }
 
@@ -176,7 +176,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Apply Free-Course-Access tag
-    await applyTag(contactId, FREE_COURSE_TAG_ID)
+    await applyTag(email, FREE_COURSE_TAG_ID)
 
     // 3. Send welcome email with Discord link
     await sendWelcomeEmail(email, firstName)
