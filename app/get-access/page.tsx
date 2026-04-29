@@ -4,11 +4,9 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const AI_USE_OPTIONS = [
-  'Save time on repetitive tasks',
-  'Generate leads and grow my business',
-  'Build and sell AI automation systems',
-  'Create content faster',
-  'Automate my customer follow-up',
+  'Make money / side hustle',
+  'Automate my business',
+  'Learn and explore',
   'Something else',
 ]
 
