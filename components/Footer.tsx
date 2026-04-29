@@ -20,6 +20,14 @@ export default function Footer() {
               <Link href="/services" className="hover:text-white transition-colors">What We Build</Link>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <a
+                href="https://franchisenow.media"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                Newsletter
+              </a>
               <Link 
                 href="/book-call"
                 className="hover:text-white transition-colors"

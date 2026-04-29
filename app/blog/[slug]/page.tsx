@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { getPostBySlug, getAllPosts } from '../lib/posts'
+import { BLOG_REVALIDATE_SECONDS, getPostBySlug, getAllPosts } from '../lib/posts'
+
+export const revalidate = BLOG_REVALIDATE_SECONDS
 
 interface Props {
   params: Promise<{
@@ -11,7 +13,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
   
   if (!post) {
     return {
@@ -25,20 +27,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export async function generateStaticParams() {
-  const posts = getAllPosts()
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
-}
-
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     notFound()
   }
+
+  const relatedPosts = (await getAllPosts())
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 2)
 
   return (
     <>
@@ -124,26 +123,26 @@ export default async function BlogPostPage({ params }: Props) {
               >
                 Book a Free Strategy Session
               </Link>
-              <Link 
-                href="/get-access"
+              <a
+                href="https://franchisenow.media"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors"
               >
-                Start With the Free Course
-              </Link>
+                Read the Newsletter
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* RELATED POSTS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">More Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {getAllPosts()
-              .filter((p) => p.slug !== post.slug)
-              .slice(0, 2)
-              .map((relatedPost) => (
+      {relatedPosts.length > 0 && (
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">More Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedPosts.map((relatedPost) => (
                 <article key={relatedPost.slug} className="bg-gray-50 rounded-xl p-6">
                   <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
                     <span>{relatedPost.publishedAt}</span>
@@ -164,9 +163,10 @@ export default async function BlogPostPage({ params }: Props) {
                   </p>
                 </article>
               ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   )
 }

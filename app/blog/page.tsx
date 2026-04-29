@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { getAllPosts } from './lib/posts'
+import { BLOG_REVALIDATE_SECONDS, getAllPosts } from './lib/posts'
+
+export const revalidate = BLOG_REVALIDATE_SECONDS
 
 export const metadata: Metadata = {
   title: 'Blog | Franchise Now',
   description: 'Insights on AI workforce, automation, and building lean businesses with AI operators.',
 }
 
-export default function BlogPage() {
-  const posts = getAllPosts()
+export default async function BlogPage() {
+  const posts = await getAllPosts()
 
   return (
     <>
@@ -98,12 +100,14 @@ export default function BlogPage() {
             >
               Book a Free Strategy Session
             </Link>
-            <Link 
-              href="/get-access"
+            <a
+              href="https://franchisenow.media"
+              target="_blank"
+              rel="noreferrer"
               className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
             >
-              Start With the Free Course
-            </Link>
+              Read the Newsletter
+            </a>
           </div>
         </div>
       </section>
