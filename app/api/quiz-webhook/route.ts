@@ -4,6 +4,8 @@ const GC_API_KEY = process.env.GC_API_KEY!
 const GC_BASE_URL = 'https://api.globalcontrol.io/api/ai'
 const FREE_COURSE_TAG_ID = '69f28c0171e469e536cb146a'
 const DISCORD_INVITE_URL = process.env.DISCORD_INVITE_URL || 'https://discord.gg/your-invite-here'
+const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY!
+const AGENTMAIL_INBOX = 'franchisenow@agentmail.to'
 
 interface QuizSubmission {
   // Quizforma webhook payload fields
@@ -93,51 +95,44 @@ async function applyTag(email: string, tagId: string) {
 
 async function sendWelcomeEmail(email: string, firstName: string) {
   const name = firstName || 'there'
-  const emailBody = `
-<p>Hey ${name}! 👋</p>
 
-<p>You're in. Here's your access to the AI Operator Course and community:</p>
-
-<p><strong>👉 Click here to join the Discord → <a href="${DISCORD_INVITE_URL}">${DISCORD_INVITE_URL}</a></strong></p>
-
-<p>Inside you'll find:</p>
-<ul>
-  <li>✅ 3 video modules (26.5 min)</li>
-  <li>✅ 5 PDF templates</li>
-  <li>✅ The full AI Operator community</li>
-</ul>
-
-<p>If you have any questions just reply to this email.</p>
-
-<p>Talk soon,<br/>Noah<br/>Franchise Now</p>
-
-<p>P.S. If you want us to install AI systems directly into your business — <a href="https://calendly.com/noah-franchisenow/30min">Click here to book a free strategy call</a></p>
+  const html = `
+<div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
+  <p>Hey ${name}! 👋</p>
+  <p>You're in. Here's your access to the AI Operator Course and community:</p>
+  <p style="font-size: 18px; font-weight: bold;">
+    👉 <a href="${DISCORD_INVITE_URL}" style="color: #6570df;">Click here to join the Discord</a>
+  </p>
+  <p>Inside you'll find:</p>
+  <ul>
+    <li>✅ 3 video modules (26.5 min)</li>
+    <li>✅ 5 PDF templates</li>
+    <li>✅ The full AI Operator community</li>
+  </ul>
+  <p>If you have any questions just reply to this email.</p>
+  <p>Talk soon,<br/>Noah<br/>Franchise Now</p>
+  <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
+  <p style="font-size: 14px; color: #666;">
+    P.S. Want us to install AI systems directly into your business?
+    <a href="https://calendly.com/noah-franchisenow/30min" style="color: #6570df;">Click here to book a free strategy call</a>
+  </p>
+</div>
   `.trim()
 
-  return gcRequest('/broadcast-emails/send-email', 'POST', {
-    recipients: [
-      {
-        tagId: FREE_COURSE_TAG_ID,
-        source: 'TAG',
-        excludeTags: [],
-        addExtraOptions: true,
-        postTagging: false,
-        onOpen: null,
-        onClick: null,
-        sendingSchedule: 'IMMEDIATELY',
-        mailProvider: 'smtp',
-        mailSenderAccount: null,
-        dailyLimit: null,
-      },
-    ],
-    subject: `Here's your free access, ${name} 🎉`,
-    previewText: 'Your AI Operator Course + Discord invite is inside',
-    emailBody,
-    replyTo: null,
-    fromName: 'Noah @ Franchise Now',
-    fromEmail: null,
-    trackOpens: true,
-    trackClicks: true,
+  const text = `Hey ${name}!\n\nYou're in. Here's your access to the AI Operator Course and community:\n\n👉 Join the Discord: ${DISCORD_INVITE_URL}\n\nInside you'll find:\n- 3 video modules (26.5 min)\n- 5 PDF templates\n- The full AI Operator community\n\nIf you have any questions just reply to this email.\n\nTalk soon,\nNoah\nFranchise Now\n\nP.S. Want us to install AI systems directly into your business? Book a free strategy call: https://calendly.com/noah-franchisenow/30min`
+
+  return fetch(`https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages/send`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${AGENTMAIL_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      to: email,
+      subject: `Here's your free access, ${name} 🎉`,
+      html,
+      text,
+    }),
   })
 }
 
