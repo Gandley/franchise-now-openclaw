@@ -26,18 +26,21 @@ async function createOrUpdateContact(
   const search = await gcRequest(`/contacts?search=${encodeURIComponent(email)}`)
   const existing = search?.data?.contacts?.[0]
 
-  if (existing) {
-    return existing._id
-  }
-
-  const created = await gcRequest('/contacts', 'POST', {
+  const payload = {
     email,
     firstName,
     lastName,
     phone: phone || undefined,
     customFields: businessInfo ? [{ key: 'Business Info', value: businessInfo }] : [],
-  })
+  }
 
+  if (existing) {
+    // Update existing contact with latest info
+    await gcRequest(`/contacts/${existing._id}`, 'PUT', payload)
+    return existing._id
+  }
+
+  const created = await gcRequest('/contacts', 'POST', payload)
   return created?.data?._id || created?._id
 }
 
