@@ -20,58 +20,23 @@ export default function BookCallPage() {
     const phone = formData.get('phone') as string
     const businessInfo = formData.get('business') as string
     
+    const calendlyUrl = `https://calendly.com/noah-franchisenow/30min?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName + ' ' + lastName)}`
+
     try {
-      // Submit to ActiveCampaign API v3
-      const response = await fetch('https://franchisenow.api-us1.com/api/3/contact/sync', {
+      await fetch('/api/book-call', {
         method: 'POST',
-        headers: {
-          'Api-Token': '0c1b5f11d0c66ff62672ec8f80a1374d1ccf650a6ebe75fd82236856993fe274eed1600d',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          contact: {
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            phone: phone || '',
-            fieldValues: [
-              {
-                field: '2',
-                value: businessInfo
-              }
-            ]
-          },
-          contactLists: [
-            {
-              list: '3',
-              status: '1'
-            }
-          ],
-          contactTags: [
-            {
-              tag: '5'
-            }
-          ]
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, firstName, lastName, phone, businessInfo }),
       })
-      
-      // Show success state
-      setIsSubmitted(true)
-      
-      // Redirect to Calendly with pre-filled data
-      const calendlyUrl = `https://calendly.com/noah-franchisenow/30min?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName + ' ' + lastName)}`
-      setTimeout(() => {
-        window.location.href = calendlyUrl
-      }, 1500)
     } catch (error) {
       console.error('Form submission error:', error)
-      // Still redirect to Calendly even if AC fails
-      setIsSubmitted(true)
-      const calendlyUrl = `https://calendly.com/noah-franchisenow/30min?email=${encodeURIComponent(email)}&name=${encodeURIComponent(firstName + ' ' + lastName)}`
-      setTimeout(() => {
-        window.location.href = calendlyUrl
-      }, 1500)
+      // Still redirect even if GC fails
     }
+
+    setIsSubmitted(true)
+    setTimeout(() => {
+      window.location.href = calendlyUrl
+    }, 1500)
   }
 
   if (isSubmitted) {
