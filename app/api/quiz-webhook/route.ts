@@ -55,12 +55,12 @@ function extractFields(body: QuizSubmission) {
 }
 
 async function gcRequest(path: string, method = 'GET', payload?: unknown) {
+  const headers: Record<string, string> = { 'X-API-KEY': GC_API_KEY }
+  if (payload) headers['Content-Type'] = 'application/json'
+
   const res = await fetch(`${GC_BASE_URL}${path}`, {
     method,
-    headers: {
-      'X-API-KEY': GC_API_KEY,
-      'Content-Type': 'application/json',
-    },
+    headers,
     body: payload ? JSON.stringify(payload) : undefined,
   })
   return res.json()
