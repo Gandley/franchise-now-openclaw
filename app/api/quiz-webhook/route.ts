@@ -3,12 +3,11 @@ import { NextRequest, NextResponse } from 'next/server'
 const GC_API_KEY = process.env.GC_API_KEY!
 const GC_BASE_URL = 'https://api.globalcontrol.io/api/ai'
 const FREE_COURSE_TAG_ID = '69f28c0171e469e536cb146a'
-const DISCORD_INVITE_URL = process.env.DISCORD_INVITE_URL || 'https://discord.gg/your-invite-here'
+const DISCORD_INVITE_URL = process.env.DISCORD_INVITE_URL || 'https://discord.gg/PZgBYwYX8'
 const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY!
 const AGENTMAIL_INBOX = 'franchisenow@agentmail.to'
 
 interface QuizSubmission {
-  // Quizforma webhook payload fields
   email?: string
   first_name?: string
   firstName?: string
@@ -16,33 +15,17 @@ interface QuizSubmission {
   lastName?: string
   phone?: string
   name?: string
-  // May also be nested under contact or lead
-  contact?: {
-    email?: string
-    first_name?: string
-    last_name?: string
-    phone?: string
-  }
-  lead?: {
-    email?: string
-    first_name?: string
-    last_name?: string
-    phone?: string
-  }
-  // Direct form submission fields
-  answers?: Record<string, string>
+  aiUse?: string
+  contact?: { email?: string; first_name?: string; last_name?: string; phone?: string }
+  lead?: { email?: string; first_name?: string; last_name?: string; phone?: string }
 }
 
 function extractFields(body: QuizSubmission) {
-  // Handle various Quizforma payload shapes
   const source = body.contact || body.lead || body
-
-  const email = source.email || body.email || ''
+  const email = (source.email || body.email || '').trim().toLowerCase()
   const rawFirst = source.first_name || body.first_name || body.firstName || ''
   const rawLast = source.last_name || body.last_name || body.lastName || ''
   const phone = source.phone || body.phone || ''
-
-  // If no separate first/last, try splitting the name field
   let firstName = rawFirst
   let lastName = rawLast
   if (!firstName && body.name) {
@@ -50,61 +33,50 @@ function extractFields(body: QuizSubmission) {
     firstName = parts[0] || ''
     lastName = parts.slice(1).join(' ') || ''
   }
-
-  return { email: email.trim().toLowerCase(), firstName, lastName, phone }
+  return { email, firstName, lastName, phone }
 }
 
-async function gcRequest(path: string, method = 'GET', payload?: unknown) {
+async function gc(path: string, method = 'GET', payload?: unknown) {
   const headers: Record<string, string> = { 'X-API-KEY': GC_API_KEY }
   if (payload) headers['Content-Type'] = 'application/json'
-
   const res = await fetch(`${GC_BASE_URL}${path}`, {
     method,
     headers,
     body: payload ? JSON.stringify(payload) : undefined,
   })
-  return res.json()
+  const text = await res.text()
+  try { return JSON.parse(text) } catch { return null }
 }
 
-async function createOrUpdateContact(email: string, firstName: string, lastName: string, phone: string) {
-  // Check if contact already exists
-  const search = await gcRequest(`/contacts?search=${encodeURIComponent(email)}`)
+async function upsertContact(email: string, firstName: string, lastName: string, phone: string) {
+  const contactPayload = { email, firstName, lastName, phone: phone || undefined, customFields: {} }
+
+  // Try to create first
+  const created = await gc('/contacts', 'POST', contactPayload)
+  const createdId = created?.data?._id || created?._id
+
+  if (createdId) return createdId
+
+  // Creation failed (duplicate) — search + update
+  await new Promise(r => setTimeout(r, 300))
+  const search = await gc(`/contacts?search=${encodeURIComponent(email)}`)
   const existing = search?.data?.contacts?.[0]
 
-  const payload = {
-    email,
-    firstName,
-    lastName,
-    phone: phone || undefined,
-    customFields: {},
-  }
+  if (!existing?._id) return null
 
-  if (existing) {
-    await gcRequest(`/contacts/${existing._id}`, 'PUT', payload)
-    return existing._id
-  }
-
-  const created = await gcRequest('/contacts', 'POST', payload)
-  return created?.data?._id || created?._id
-}
-
-async function applyTag(email: string, tagId: string) {
-  return gcRequest(`/tags/fire-tag/${tagId}`, 'POST', {
-    email,
-  })
+  await gc(`/contacts/${existing._id}`, 'PUT', contactPayload)
+  return existing._id
 }
 
 async function sendWelcomeEmail(email: string, firstName: string) {
   const name = firstName || 'there'
-
   const html = `
-<div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
+<div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a;">
   <p>Hey ${name}! 👋</p>
   <p>You're in. Here's your access to the AI Operator Course and community:</p>
-  <p style="font-size: 18px; font-weight: bold;">
-    👉 <a href="${DISCORD_INVITE_URL}" style="color: #6570df;">Click here to join the Discord</a>
+  <p style="font-size:18px;font-weight:bold;">
+    👉 <a href="${DISCORD_INVITE_URL}" style="color:#6570df;">Click here to join the Discord</a>
   </p>
-  <p>Inside you'll find:</p>
   <ul>
     <li>✅ 3 video modules (26.5 min)</li>
     <li>✅ 5 PDF templates</li>
@@ -112,28 +84,19 @@ async function sendWelcomeEmail(email: string, firstName: string) {
   </ul>
   <p>If you have any questions just reply to this email.</p>
   <p>Talk soon,<br/>Noah<br/>Franchise Now</p>
-  <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
-  <p style="font-size: 14px; color: #666;">
+  <hr style="border:none;border-top:1px solid #eee;margin:24px 0;"/>
+  <p style="font-size:14px;color:#666;">
     P.S. Want us to install AI systems directly into your business?
-    <a href="https://calendly.com/noah-franchisenow/30min" style="color: #6570df;">Click here to book a free strategy call</a>
+    <a href="https://calendly.com/noah-franchisenow/30min" style="color:#6570df;">Book a free strategy call</a>
   </p>
-</div>
-  `.trim()
+</div>`.trim()
 
-  const text = `Hey ${name}!\n\nYou're in. Here's your access to the AI Operator Course and community:\n\n👉 Join the Discord: ${DISCORD_INVITE_URL}\n\nInside you'll find:\n- 3 video modules (26.5 min)\n- 5 PDF templates\n- The full AI Operator community\n\nIf you have any questions just reply to this email.\n\nTalk soon,\nNoah\nFranchise Now\n\nP.S. Want us to install AI systems directly into your business? Book a free strategy call: https://calendly.com/noah-franchisenow/30min`
+  const text = `Hey ${name}!\n\nYou're in. Join the Discord: ${DISCORD_INVITE_URL}\n\nTalk soon,\nNoah\nFranchise Now`
 
   return fetch(`https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages/send`, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${AGENTMAIL_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      to: email,
-      subject: `Here's your free access, ${name} 🎉`,
-      html,
-      text,
-    }),
+    headers: { Authorization: `Bearer ${AGENTMAIL_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ to: email, subject: `Here's your free access, ${name} 🎉`, html, text }),
   })
 }
 
@@ -144,17 +107,8 @@ export async function POST(req: NextRequest) {
 
     if (contentType.includes('application/json')) {
       body = await req.json()
-    } else if (contentType.includes('application/x-www-form-urlencoded')) {
-      const text = await req.text()
-      const params = new URLSearchParams(text)
-      body = Object.fromEntries(params.entries()) as QuizSubmission
     } else {
-      // Try JSON anyway
-      try {
-        body = await req.json()
-      } catch {
-        body = {}
-      }
+      try { body = await req.json() } catch { body = {} }
     }
 
     const { email, firstName, lastName, phone } = extractFields(body)
@@ -163,28 +117,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing email' }, { status: 400 })
     }
 
-    // 1. Create or find contact in Global Control
-    const contactId = await createOrUpdateContact(email, firstName, lastName, phone)
-
-    if (!contactId) {
-      console.error('Failed to create contact for', email)
-      return NextResponse.json({ error: 'Failed to create contact' }, { status: 500 })
-    }
-
-    // 2. Apply Free-Course-Access tag
-    await applyTag(email, FREE_COURSE_TAG_ID)
-
-    // 3. Send welcome email with Discord link
+    await upsertContact(email, firstName, lastName, phone)
+    await gc(`/tags/fire-tag/${FREE_COURSE_TAG_ID}`, 'POST', { email })
     await sendWelcomeEmail(email, firstName)
 
-    return NextResponse.json({ success: true, contactId })
+    return NextResponse.json({ success: true })
   } catch (err) {
     console.error('Quiz webhook error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
 
-// Health check
 export async function GET() {
   return NextResponse.json({ status: 'ok', endpoint: 'quiz-webhook' })
 }
