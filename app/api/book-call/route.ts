@@ -16,38 +16,6 @@ async function gc(path: string, method = 'GET', payload?: unknown) {
   try { return JSON.parse(text) } catch { return null }
 }
 
-async function upsertContact(
-  email: string, firstName: string, lastName: string, phone: string, businessInfo: string
-): Promise<string | null> {
-  const contactPayload = {
-    email,
-    firstName,
-    lastName,
-    phone: phone || undefined,
-    customFields: businessInfo ? [{ key: 'Business Info', value: businessInfo }] : [],
-  }
-
-  // Step 1: Try to create
-  const created = await gc('/contacts', 'POST', contactPayload)
-  const createdId = created?.data?._id || created?._id
-
-  if (createdId) {
-    // New contact created with all fields
-    return createdId
-  }
-
-  // Step 2: Creation failed (likely duplicate) — search for existing contact
-  await new Promise(r => setTimeout(r, 300)) // small delay for GC consistency
-  const search = await gc(`/contacts?search=${encodeURIComponent(email)}`)
-  const existing = search?.data?.contacts?.[0]
-
-  if (!existing?._id) return null
-
-  // Step 3: Update existing contact with name/phone
-  await gc(`/contacts/${existing._id}`, 'PUT', contactPayload)
-  return existing._id
-}
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
@@ -62,10 +30,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing email' }, { status: 400 })
     }
 
-    const contactId = await upsertContact(email, firstName, lastName, phone, businessInfo)
+    // Step 1: Create or find contact via POST (creates if new, errors if duplicate)
+    await gc('/contacts', 'POST', { email, firstName, lastName, phone: phone || undefined })
 
-    // Fire tag using email (works regardless of contactId)
-    await gc(`/tags/fire-tag/${STRATEGY_CALL_TAG_ID}`, 'POST', { email })
+    // Step 2: Fire tag — returns the contact object with its _id
+    const tagResult = await gc(`/tags/fire-tag/${STRATEGY_CALL_TAG_ID}`, 'POST', { email })
+    const contactId = tagResult?.data?.data?._id || tagResult?.data?._id
+
+    // Step 3: If we got the contact ID, PUT update with name/phone to ensure they're saved
+    if (contactId) {
+      await gc(`/contacts/${contactId}`, 'PUT', {
+        email,
+        firstName,
+        lastName,
+        phone: phone || undefined,
+        customFields: businessInfo ? [{ key: 'Business Info', value: businessInfo }] : [],
+      })
+    }
 
     return NextResponse.json({ success: true, contactId })
   } catch (err) {

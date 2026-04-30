@@ -49,23 +49,19 @@ async function gc(path: string, method = 'GET', payload?: unknown) {
 }
 
 async function upsertContact(email: string, firstName: string, lastName: string, phone: string) {
-  const contactPayload = { email, firstName, lastName, phone: phone || undefined, customFields: {} }
+  // Step 1: Try to create
+  await gc('/contacts', 'POST', { email, firstName, lastName, phone: phone || undefined })
 
-  // Try to create first
-  const created = await gc('/contacts', 'POST', contactPayload)
-  const createdId = created?.data?._id || created?._id
+  // Step 2: Fire tag — returns contact object with _id
+  const tagResult = await gc(`/tags/fire-tag/${FREE_COURSE_TAG_ID}`, 'POST', { email })
+  const contactId = tagResult?.data?.data?._id || tagResult?.data?._id
 
-  if (createdId) return createdId
+  // Step 3: PUT update to ensure name/phone are saved
+  if (contactId) {
+    await gc(`/contacts/${contactId}`, 'PUT', { email, firstName, lastName, phone: phone || undefined })
+  }
 
-  // Creation failed (duplicate) — search + update
-  await new Promise(r => setTimeout(r, 300))
-  const search = await gc(`/contacts?search=${encodeURIComponent(email)}`)
-  const existing = search?.data?.contacts?.[0]
-
-  if (!existing?._id) return null
-
-  await gc(`/contacts/${existing._id}`, 'PUT', contactPayload)
-  return existing._id
+  return contactId
 }
 
 async function sendWelcomeEmail(email: string, firstName: string) {
@@ -118,7 +114,7 @@ export async function POST(req: NextRequest) {
     }
 
     await upsertContact(email, firstName, lastName, phone)
-    await gc(`/tags/fire-tag/${FREE_COURSE_TAG_ID}`, 'POST', { email })
+    // tag is already fired inside upsertContact
     await sendWelcomeEmail(email, firstName)
 
     return NextResponse.json({ success: true })
