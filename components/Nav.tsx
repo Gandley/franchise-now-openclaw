@@ -15,24 +15,22 @@ export default function Nav() {
           </Link>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Home</Link>
-            <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">What We Build</Link>
-            <Link href="/growthos" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">GrowthOS</Link>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Blog</Link>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Services</Link>
+            <Link href="/growthos" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">GrowthOS</Link>
+            <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Blog</Link>
             <a
               href="https://franchisenow.media"
               target="_blank"
               rel="noreferrer"
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors"
+              className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm"
             >
               Newsletter
             </a>
-            <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">Free Course & Community</Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">About</Link>
+            <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Free Course</Link>
             <Link 
               href="/book-call"
-              className="btn-primary py-2 px-5 text-sm"
+              className="btn-primary py-2 px-4 text-sm"
             >
               Book a Call
             </Link>
@@ -53,8 +51,7 @@ export default function Nav() {
         {/* Mobile menu */}
         {open && (
           <div className="md:hidden pb-4 flex flex-col gap-4">
-            <Link href="/" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>What We Build</Link>
+            <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Services</Link>
             <Link href="/growthos" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>GrowthOS</Link>
             <Link href="/blog" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Blog</Link>
             <a
@@ -65,8 +62,7 @@ export default function Nav() {
             >
               Newsletter
             </a>
-            <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course & Community</Link>
-            <Link href="/about" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>About</Link>
+            <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course</Link>
             <Link 
               href="/book-call"
               className="btn-primary text-sm text-center"

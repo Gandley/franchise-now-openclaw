@@ -358,10 +358,10 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-gray-50 rounded-xl p-8 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Start Free</h3>
-              <ul className="space-y-3 text-gray-600 mb-6">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-100 text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Get Your Free GrowthOS Plan</h3>
+              <ul className="space-y-3 text-gray-600 mb-6 text-left max-w-md mx-auto">
                 <li className="flex items-center gap-2">
                   <span className="text-brand-500">✓</span>
                   <span>AI-Generated Gap Analysis</span>
@@ -377,33 +377,9 @@ export default function HomePage() {
               </ul>
               <Link 
                 href="/growthos"
-                className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-center w-full"
+                className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-lg transition-colors text-center"
               >
-                Get My Free GrowthOS Plan
-              </Link>
-            </div>
-            
-            <div className="bg-gray-50 rounded-xl p-8 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Full Execution</h3>
-              <ul className="space-y-3 text-gray-600 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="text-brand-500">✓</span>
-                  <span>Complete 12-Month Execution</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-brand-500">✓</span>
-                  <span>Specialist Teams Per Channel</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-brand-500">✓</span>
-                  <span>Live CAC & ROI Dashboard</span>
-                </li>
-              </ul>
-              <Link 
-                href="/growthos"
-                className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-center w-full"
-              >
-                Book a GrowthOS Call
+                Get My Free GrowthOS Plan →
               </Link>
             </div>
           </div>
