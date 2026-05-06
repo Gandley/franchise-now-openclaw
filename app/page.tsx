@@ -3,8 +3,8 @@ import TestimonialCard from '@/components/TestimonialCard'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Franchise Now | AI Workforce for Lean Businesses',
-  description: 'Install your first AI workforce — trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.',
+  title: 'Franchise Now | Franchise-Grade AI Systems for Business Owners',
+  description: 'Install your first AI workforce — trained operators that grow revenue, serve customers, and run work 24/7. Franchise-grade systems built for business owners, solopreneurs, and local businesses.',
 }
 
 const testimonials = [
@@ -96,8 +96,11 @@ export default function HomePage() {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-brand-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-brand-100 mb-4 max-w-3xl mx-auto leading-relaxed">
             Deploy trained AI operators that grow revenue, support customers, and run work 24/7 — without adding headcount.
+          </p>
+          <p className="text-lg text-brand-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+            For business owners, solopreneurs, local businesses, and franchise operators ready to run a world-class system.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -152,7 +155,7 @@ export default function HomePage() {
             A new class of AI — <strong>operators</strong> — can now take action, follow instructions, and do real work inside the software your business already runs.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            We build and deploy these operators using <strong>OpenClaw</strong>, the AI platform that makes AI operators actually work inside the tools you already use.
+            We build and deploy these operators using <strong>OpenClaw</strong> — our AI operator platform built specifically for small business and franchise-grade deployment. It's the same system we run our own business on.
           </p>
         </div>
       </section>
@@ -342,8 +345,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY FRANCHISE NOW */}
+      {/* HOMEPAGE GROWTHOS SECTION */}
       <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wide mb-2">Introducing GrowthOS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Need Marketing Execution, Not Just Advice?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              GrowthOS is our AI-powered marketing execution system. It builds your 12-month marketing plan — with full budget allocation and CAC/ROI projections — then our specialist teams execute every channel the plan recommends. SEO. Paid ads. Reputation. Content. All of it. Tracked against every number we commit to on Day 1.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Start Free</h3>
+              <ul className="space-y-3 text-gray-600 mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="text-brand-500">✓</span>
+                  <span>AI-Generated Gap Analysis</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-brand-500">✓</span>
+                  <span>12-Month Marketing Plan</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-brand-500">✓</span>
+                  <span>Budget & CAC Projections</span>
+                </li>
+              </ul>
+              <Link 
+                href="/growthos"
+                className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-center w-full"
+              >
+                Get My Free GrowthOS Plan
+              </Link>
+            </div>
+            
+            <div className="bg-gray-50 rounded-xl p-8 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Full Execution</h3>
+              <ul className="space-y-3 text-gray-600 mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="text-brand-500">✓</span>
+                  <span>Complete 12-Month Execution</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-brand-500">✓</span>
+                  <span>Specialist Teams Per Channel</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-brand-500">✓</span>
+                  <span>Live CAC & ROI Dashboard</span>
+                </li>
+              </ul>
+              <Link 
+                href="/growthos"
+                className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-center w-full"
+              >
+                Book a GrowthOS Call
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY FRANCHISE NOW */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="section-heading">Why Franchise Now?</h2>
           <div className="text-left mt-8 space-y-6">
@@ -352,8 +420,8 @@ export default function HomePage() {
                 <span className="text-brand-600 font-bold">1</span>
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1">We teach this</h3>
-                <p className="text-gray-600">We created the AI Operator Course because we believe in education first. Understand what you're building before you build it.</p>
+                <h3 className="font-bold text-gray-900 mb-1">We systemize everything</h3>
+                <p className="text-gray-600">Every operator we build is documented, repeatable, and trainable. That's the franchise standard — and it's the standard we hold ourselves to.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -361,8 +429,8 @@ export default function HomePage() {
                 <span className="text-brand-600 font-bold">2</span>
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1">We build this</h3>
-                <p className="text-gray-600">We're not just consultants — we're implementers. We install, configure, and manage the operators we deploy.</p>
+                <h3 className="font-bold text-gray-900 mb-1">We build and install</h3>
+                <p className="text-gray-600">We're not consultants who hand you a framework and leave. We build, configure, and deploy the operators ourselves. We don't call it done until it's running.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -370,8 +438,8 @@ export default function HomePage() {
                 <span className="text-brand-600 font-bold">3</span>
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1">We use these ideas ourselves</h3>
-                <p className="text-gray-600">Everything we recommend, we do ourselves. We run our business on the same operators we build for clients.</p>
+                <h3 className="font-bold text-gray-900 mb-1">We run on the same systems</h3>
+                <p className="text-gray-600">Everything we deploy for clients, we run in our own business. No recommending tools we haven't lived with. No theory.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -379,8 +447,8 @@ export default function HomePage() {
                 <span className="text-brand-600 font-bold">4</span>
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1">We help businesses evolve</h3>
-                <p className="text-gray-600">Our goal isn't to sell you software. It's to help you become an AI-enabled organization with operators that compound over time.</p>
+                <h3 className="font-bold text-gray-900 mb-1">We turn operators into organizations</h3>
+                <p className="text-gray-600">The goal isn't one AI agent. It's a business that runs with or without you — compounding over time. That's what franchise-grade operations look like.</p>
               </div>
             </div>
           </div>
