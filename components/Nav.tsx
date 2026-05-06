@@ -16,7 +16,7 @@ export default function Nav() {
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Services</Link>
+            <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Our Services</Link>
             <Link href="/growthos" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">GrowthOS</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Blog</Link>
             <a
@@ -51,7 +51,7 @@ export default function Nav() {
         {/* Mobile menu */}
         {open && (
           <div className="md:hidden pb-4 flex flex-col gap-4">
-            <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Services</Link>
+            <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Our Services</Link>
             <Link href="/growthos" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>GrowthOS</Link>
             <Link href="/blog" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Blog</Link>
             <a
