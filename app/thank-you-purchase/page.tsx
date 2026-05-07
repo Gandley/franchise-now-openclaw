@@ -55,16 +55,24 @@ export default function ThankYouPurchasePage() {
                 2
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">Join Our Discord Community</h3>
-                <p className="text-gray-600 mb-3">Connect with other AI operators and get real-time support.</p>
-                <a 
-                  href="https://discord.gg/PZgBYwYX8"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold px-6 py-3 rounded-lg transition-colors"
-                >
-                  Join Discord Server →
-                </a>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">Join the Free Course & Community</h3>
+                <p className="text-gray-600 mb-3">Get instant access to the AI Operator Course and connect with our Discord community for real-time support.</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link 
+                    href="/free-course"
+                    className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-center"
+                  >
+                    Start Free Course →
+                  </Link>
+                  <a 
+                    href="https://discord.gg/PZgBYwYX8"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold px-6 py-3 rounded-lg transition-colors text-center"
+                  >
+                    Join Discord →
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -74,13 +82,13 @@ export default function ThankYouPurchasePage() {
                 3
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">Access Your Free Course</h3>
-                <p className="text-gray-600 mb-3">Start learning with the AI Operator Course while we prepare your setup.</p>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">Schedule Your Onboarding Call</h3>
+                <p className="text-gray-600 mb-3">Book your AI operator setup call. We will walk you through the entire process and get you started.</p>
                 <Link 
-                  href="/free-course"
-                  className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                  href="/book-call"
+                  className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
                 >
-                  Start Free Course →
+                  Book Onboarding Call →
                 </Link>
               </div>
             </div>
@@ -91,8 +99,16 @@ export default function ThankYouPurchasePage() {
                 4
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">Schedule Your Onboarding Call</h3>
-                <p className="text-gray-600 mb-3">We will reach out within 24 hours to schedule your AI operator setup call. Watch for an email with booking details.</p>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">Get Your Free Marketing Assessment</h3>
+                <p className="text-gray-600 mb-3">Run a complete gap and opportunity analysis for your business. See exactly where you can improve your marketing.</p>
+                <a 
+                  href="https://app.mplannerpro.com/7270f820ae/chat?pg=3c4800524a"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                >
+                  Get Free Marketing Assessment →
+                </a>
               </div>
             </div>
           </div>
@@ -135,15 +151,7 @@ export default function ThankYouPurchasePage() {
           <p className="text-gray-600 mb-6">
             Reply to your confirmation email or message us in Discord. We are here to help.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://discord.gg/PZgBYwYX8"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold px-8 py-4 rounded-lg transition-colors"
-            >
-              Join Discord
-            </a>
+          <div className="flex justify-center">
             <Link 
               href="/"
               className="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-8 py-4 rounded-lg transition-colors"
