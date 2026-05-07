@@ -57,22 +57,14 @@ export default function ThankYouPurchasePage() {
               <div>
                 <h3 className="font-bold text-gray-900 text-lg mb-1">Join the Free Course & Community</h3>
                 <p className="text-gray-600 mb-3">Get instant access to the AI Operator Course and connect with our Discord community for real-time support.</p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Link 
-                    href="/free-course"
-                    className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-center"
-                  >
-                    Start Free Course →
-                  </Link>
-                  <a 
-                    href="https://discord.gg/PZgBYwYX8"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-block bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold px-6 py-3 rounded-lg transition-colors text-center"
-                  >
-                    Join Discord →
-                  </a>
-                </div>
+                <a 
+                  href="https://discord.gg/TUtSBRpBC"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                >
+                  Join Discord Community →
+                </a>
               </div>
             </div>
 
@@ -84,12 +76,14 @@ export default function ThankYouPurchasePage() {
               <div>
                 <h3 className="font-bold text-gray-900 text-lg mb-1">Schedule Your Onboarding Call</h3>
                 <p className="text-gray-600 mb-3">Book your AI operator setup call. We will walk you through the entire process and get you started.</p>
-                <Link 
-                  href="/book-call"
-                  className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                <a 
+                  href="https://calendly.com/noah-franchisenow/30min"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
                 >
                   Book Onboarding Call →
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -105,7 +99,7 @@ export default function ThankYouPurchasePage() {
                   href="https://app.mplannerpro.com/7270f820ae/chat?pg=3c4800524a"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
+                  className="inline-block bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-lg transition-colors"
                 >
                   Get Free Marketing Assessment →
                 </a>
