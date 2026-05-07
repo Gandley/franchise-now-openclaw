@@ -304,7 +304,7 @@ export default function ServicesPage() {
                 <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Private 1-on-1 Weekly Call</li>
                 <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Advanced Agent Training</li>
               </ul>
-              <Link href="/book-call" className="btn-secondary w-full block text-center py-3">Get Started</Link>
+              <a href="https://buy.stripe.com/7sYaEY18ygqU8y10h54gg01" className="btn-secondary w-full block text-center py-3">Get Started</a>
             </div>
 
             {/* CLAW SCALE */}
