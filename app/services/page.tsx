@@ -283,51 +283,100 @@ export default function ServicesPage() {
 
       {/* PRICING */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Investment</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-8">
-              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Setup</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Operator Installation</h3>
-              <div className="text-3xl font-bold text-brand-600 mb-4">Starting at $1,500</div>
-              <p className="text-gray-600 mb-6 text-sm">Complete build and deployment of your first AI operator. Perfect if you want to manage ongoing optimization yourself.</p>
-              <ul className="space-y-2 text-sm text-gray-700 mb-8">
-                {['Discovery and workflow mapping', 'Custom operator build', 'Integration with your tools', 'Training and deployment', '30-day post-launch support'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-green-500">✓</span> {item}
-                  </li>
-                ))}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Investment</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Three tiers designed for different stages of AI operator deployment. All include our core 14 skills.</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* CLAW LAUNCH */}
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Entry</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">Claw Launch</h3>
+              <div className="text-3xl font-bold text-brand-600 mb-1">$497</div>
+              <div className="text-sm text-gray-500 mb-4">One-time setup • $0/month</div>
+              <p className="text-gray-600 mb-4 text-sm">Get started with your first AI operator. Perfect for testing the waters.</p>
+              <ul className="space-y-2 text-sm text-gray-700 mb-6">
+                <li className="flex items-center gap-2"><span className="text-green-500">✓</span> AI Agent Setup (14 skills)</li>
+                <li className="flex items-center gap-2"><span className="text-green-500">✓</span> ClawLauncher Hosting & Security</li>
+                <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Monthly Resources</li>
+                <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Email Support</li>
+                <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Weekly Group Call</li>
+                <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Private 1-on-1 Weekly Call</li>
+                <li className="flex items-center gap-2 text-gray-400"><span className="text-gray-300">✗</span> Advanced Agent Training</li>
               </ul>
-              <Link 
-                href="/book-call"
-                className="btn-secondary w-full block text-center"
-              >
-                Book a Call
-              </Link>
+              <Link href="/book-call" className="btn-secondary w-full block text-center py-3">Get Started</Link>
             </div>
-            <div className="bg-brand-600 text-white rounded-xl p-8 shadow-lg relative">
+
+            {/* CLAW SCALE */}
+            <div className="bg-brand-600 text-white rounded-xl p-6 shadow-lg relative">
               <div className="absolute -top-3 right-6 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</div>
-              <div className="text-sm font-semibold text-brand-200 uppercase tracking-wide mb-2">Setup + Management</div>
-              <h3 className="text-2xl font-bold mb-1">Full Service</h3>
-              <div className="text-3xl font-bold mb-1">$1,500 setup</div>
-              <div className="text-xl font-semibold text-brand-200 mb-4">+ $1,500/month</div>
-              <p className="text-brand-100 mb-6 text-sm">Your AI workforce, built and managed. We handle training, optimization, and expansion so you can stay focused on your business.</p>
-              <ul className="space-y-2 text-sm text-brand-100 mb-8">
-                {['Everything in Setup', 'Monthly performance reviews', 'Ongoing operator training', 'New operators as you grow', 'Priority support'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-yellow-300">✓</span> {item}
-                  </li>
-                ))}
+              <div className="text-sm font-semibold text-brand-200 uppercase tracking-wide mb-2">Growth</div>
+              <h3 className="text-2xl font-bold mb-1">Claw Scale</h3>
+              <div className="text-3xl font-bold mb-1">$497</div>
+              <div className="text-sm text-brand-200 mb-4">Setup + $297/month</div>
+              <p className="text-brand-100 mb-4 text-sm">Scale your AI workforce with ongoing support and resources.</p>
+              <ul className="space-y-2 text-sm text-brand-100 mb-6">
+                <li className="flex items-center gap-2"><span className="text-yellow-300">✓</span> AI Agent Setup (14 skills)</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-300">✓</span> ClawLauncher Hosting & Security</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-300">✓</span> Monthly Resources</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-300">✓</span> Email Support</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-300">✓</span> Weekly Group Call</li>
+                <li className="flex items-center gap-2 text-brand-300"><span className="text-brand-400">✗</span> Private 1-on-1 Weekly Call</li>
+                <li className="flex items-center gap-2 text-brand-300"><span className="text-brand-400">✗</span> Advanced Agent Training</li>
               </ul>
-              <Link 
-                href="/book-call"
-                className="block text-center bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors"
-              >
-                Apply Now
-              </Link>
+              <Link href="/book-call" className="block text-center bg-white text-brand-700 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors">Apply Now</Link>
+            </div>
+
+            {/* CLAW DOMINANCE */}
+            <div className="bg-gray-900 text-white rounded-xl p-6 shadow-lg">
+              <div className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">Enterprise</div>
+              <h3 className="text-2xl font-bold mb-1">Claw Dominance</h3>
+              <div className="text-3xl font-bold text-yellow-400 mb-1">$997</div>
+              <div className="text-sm text-gray-400 mb-4">Setup + $797/month</div>
+              <p className="text-gray-300 mb-4 text-sm">Full AI workforce deployment with private coaching and advanced training.</p>
+              <ul className="space-y-2 text-sm text-gray-300 mb-6">
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> AI Agent Setup (14 skills)</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> ClawLauncher Hosting & Security</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> Monthly Resources</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> Email Support</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> Weekly Group Call</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> Private 1-on-1 Weekly Call</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-400">✓</span> Advanced Agent Training</li>
+              </ul>
+              <Link href="/book-call" className="block text-center bg-yellow-400 text-gray-900 hover:bg-yellow-300 font-bold py-3 rounded-lg transition-colors">Apply Now</Link>
             </div>
           </div>
-          <p className="text-center text-gray-500 text-sm mt-6">Not sure which is right? Book a consultation and we'll tell you exactly what your business needs.</p>
+
+          {/* 14 SKILLS SECTION */}
+          <div className="mt-16 bg-gray-50 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">All Tiers Include 14 Core Skills</h3>
+            <p className="text-center text-gray-600 mb-6">Built on Chad Nicely's proven business builder framework</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                'Inbox Copywriter',
+                'Sales Page Skill',
+                'Video Sales Letter',
+                'Hero Section Generator',
+                'Master Copywriter',
+                'ZipSkills v2.0',
+                'Skills Creator v2.0',
+                'Cron Scheduler',
+                'Dream Life Goal',
+                'Memory Bank',
+                'Create Business v2.0.1',
+                'Github Vercel Deployment',
+                'Project Setup',
+                'Stripe Setup'
+              ].map((skill, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                  <span className="text-brand-500">•</span>
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="text-center text-gray-500 text-sm mt-8">Not sure which is right? Book a consultation and we'll tell you exactly what your business needs.</p>
         </div>
       </section>
 
