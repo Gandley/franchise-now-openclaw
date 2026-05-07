@@ -65,10 +65,6 @@ const faqs = [
     q: 'How long does it take to get an operator running?',
     a: 'Most operators are live within 2–3 weeks of our strategy session. Complex multi-step workflows may take longer, but we\'ll give you a clear timeline upfront.',
   },
-  {
-    q: 'What does it cost?',
-    a: 'Starting at $1,500 setup + $1,500/month management per operator. Book a consultation and we\'ll give you a clear number based on your specific needs.',
-  },
 ]
 
 export default function HomePage() {
