@@ -93,21 +93,13 @@ export default async function BlogPage() {
           <p className="text-brand-100 text-lg mb-8">
             Book a free strategy session and we&apos;ll map out exactly how AI operators could work in your business.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Link 
               href="/book-call"
               className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
             >
               Book a Free Strategy Session
             </Link>
-            <a
-              href="https://franchisenow.media"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-10 py-4 rounded-lg transition-colors text-lg"
-            >
-              Read the Newsletter
-            </a>
           </div>
         </div>
       </section>

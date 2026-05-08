@@ -19,14 +19,6 @@ export default function Nav() {
             <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Our Services</Link>
             <Link href="/growthos" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">GrowthOS</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Blog</Link>
-            <a
-              href="https://franchisenow.media"
-              target="_blank"
-              rel="noreferrer"
-              className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm"
-            >
-              Newsletter
-            </a>
             <Link href="/get-access" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm">Free Course</Link>
             <Link 
               href="/book-call"
@@ -54,14 +46,6 @@ export default function Nav() {
             <Link href="/services" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Our Services</Link>
             <Link href="/growthos" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>GrowthOS</Link>
             <Link href="/blog" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Blog</Link>
-            <a
-              href="https://franchisenow.media"
-              target="_blank"
-              rel="noreferrer"
-              className="text-gray-700 font-medium"
-            >
-              Newsletter
-            </a>
             <Link href="/get-access" className="text-gray-700 font-medium" onClick={() => setOpen(false)}>Free Course</Link>
             <Link 
               href="/book-call"

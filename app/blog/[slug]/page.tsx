@@ -116,21 +116,13 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="text-brand-100 mb-8">
               {post.secondaryCtaCopy || "Book a free strategy session and we'll map out exactly how AI operators could work for you."}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link 
                 href="/book-call"
                 className="inline-block bg-white text-brand-700 hover:bg-gray-50 font-bold px-8 py-4 rounded-lg transition-colors"
               >
                 Book a Free Strategy Session
               </Link>
-              <a
-                href="https://franchisenow.media"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-700 font-bold px-8 py-4 rounded-lg transition-colors"
-              >
-                Read the Newsletter
-              </a>
             </div>
           </div>
         </div>
