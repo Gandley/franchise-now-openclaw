@@ -202,7 +202,7 @@ export default function GrowthOSPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Execute It</h3>
               <p className="text-gray-600 mb-4">
-                Specialist white-label teams execute every channel your plan recommends — all coordinated through one system.
+                Human lead specialist teams execute every channel your plan recommends — all coordinated through one system.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
