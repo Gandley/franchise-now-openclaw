@@ -349,8 +349,7 @@ export default function ServicesPage() {
 
           {/* 14 SKILLS SECTION */}
           <div className="mt-16 bg-gray-50 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">All Tiers Include 14 Core Skills</h3>
-            <p className="text-center text-gray-600 mb-6">Built on Chad Nicely's proven business builder framework</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">All Tiers Include 14 Core Skills</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 'Inbox Copywriter',
