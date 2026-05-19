@@ -116,6 +116,18 @@ export default function GrowthOSPage() {
             The plan, the execution, and the proof — all in one system.
           </p>
           
+          <div className="mb-8 w-full max-w-2xl mx-auto">
+            <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1192599301?badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                title="Growbotik site video - start now"
+              />
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               href="/book-call"
