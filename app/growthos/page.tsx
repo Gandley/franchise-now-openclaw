@@ -129,12 +129,14 @@ export default function GrowthOSPage() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              href="/book-call"
+            <a 
+              href="https://app.mplannerpro.com/7270f820ae/chat?pg=3c4800524a"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-white hover:bg-gray-100 text-brand-700 font-bold px-10 py-5 rounded-lg transition-all text-lg shadow-2xl hover:shadow-xl hover:scale-105"
             >
-              Get Your Free GrowthOS Plan — It's Free
-            </Link>
+              Get Your Free GrowthOS Plan — It&apos;s Free
+            </a>
           </div>
           
           <p className="text-sm text-brand-200 mt-8">No obligation. No generic templates. Built for your business.</p>
