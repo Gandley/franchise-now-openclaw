@@ -325,7 +325,37 @@ export default function GrowthOSPage() {
         </div>
       </section>
 
-      {/* SECTION 7 — FAQ Accordion */}
+      {/* SECTION 6.5 — Sales Partner */}
+      <section className="py-16 bg-white border-t border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-500 mb-4">Sales Partner</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Strategy Calls Handled by Umbrella Local
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+            When you book a call to explore GrowthOS, you&apos;re speaking with the team at{' '}
+            <a
+              href="https://umbrellalocal.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 font-semibold hover:underline"
+            >
+              Umbrella Local
+            </a>
+            {' '}— our dedicated sales partner. They understand the GrowthOS system inside and out and are focused on one thing: making sure it&apos;s the right fit for your business.
+          </p>
+          <a
+            href="https://umbrellalocal.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors text-sm"
+          >
+            Learn more about Umbrella Local →
+          </a>
+        </div>
+      </section>
+
+      {/* SECTION 7 — FAQ Accordion */
       <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
