@@ -291,12 +291,14 @@ export default function GrowthOSPage() {
           <p className="text-brand-200 text-lg mb-8">
             No obligation. No generic output. A real AI-generated plan built for your business — including budget allocation, CAC targets, and a clear picture of what execution looks like.
           </p>
-          <Link 
-            href="/book-call"
+          <a 
+            href="https://app.mplannerpro.com/7270f820ae/chat?pg=3c4800524a"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white hover:bg-gray-100 text-brand-700 font-bold px-10 py-5 rounded-lg transition-all text-lg shadow-2xl hover:shadow-xl hover:scale-105"
           >
-            Build My GrowthOS Plan — It's Free →
-          </Link>
+            Build My GrowthOS Plan — It&apos;s Free →
+          </a>
         </div>
       </section>
 
@@ -360,12 +362,14 @@ export default function GrowthOSPage() {
           <p className="text-brand-200 text-lg mb-10">
             Get your free AI-generated gap analysis, 12-month plan, and budget model. No obligation. No templates. Built for your business.
           </p>
-          <Link 
-            href="/book-call"
+          <a 
+            href="https://app.mplannerpro.com/7270f820ae/chat?pg=3c4800524a"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-white hover:bg-gray-100 text-brand-700 font-bold px-10 py-5 rounded-lg transition-all text-lg shadow-2xl hover:shadow-xl hover:scale-105"
           >
             Get My Free GrowthOS Analysis →
-          </Link>
+          </a>
         </div>
       </section>
     </>
