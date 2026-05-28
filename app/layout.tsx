@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Franchise Now | AI Workforce for Lean Businesses',
   description: 'Install your first AI workforce — trained AI operators that grow revenue, support customers, and run work 24/7 without adding headcount.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
