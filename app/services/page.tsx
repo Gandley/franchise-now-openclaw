@@ -400,6 +400,81 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* SKILLVAULT */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Left: copy */}
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 bg-brand-600 bg-opacity-20 border border-brand-500 border-opacity-30 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                SkillVault
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                Just Need the Skills?<br />
+                <span className="text-brand-400">Build It Yourself.</span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                SkillVault is our marketplace of plug-and-play AI skills — the same ones we use to build client systems. If you want to skip the done-for-you service and build your own AI operators, this is where you start.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  '37+ ready-to-deploy AI skills',
+                  'Free skills to get started immediately',
+                  'Single skill purchases for $9',
+                  'Vault Pro for unlimited access',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-gray-300">
+                    <span className="w-5 h-5 rounded-full bg-brand-600 bg-opacity-30 border border-brand-500 border-opacity-40 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none" stroke="#818cf8" strokeWidth="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://vaultofskills.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-lg transition-colors text-base"
+              >
+                Browse SkillVault
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            {/* Right: visual card */}
+            <div className="flex-shrink-0 w-full md:w-72">
+              <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background: 'linear-gradient(135deg, #6366f1, #818cf8)'}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  </div>
+                  <span className="text-white font-bold text-lg">SkillVault</span>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { name: 'Social Post Pipeline', tier: 'Pro', color: 'text-purple-400' },
+                    { name: 'Nova Orchestrator', tier: '$9', color: 'text-yellow-400' },
+                    { name: 'Lead Magnet Builder', tier: 'Free', color: 'text-green-400' },
+                    { name: 'Video Cue', tier: '$9', color: 'text-yellow-400' },
+                    { name: 'Trend Intelligence', tier: 'Free', color: 'text-green-400' },
+                  ].map((skill, i) => (
+                    <div key={i} className="flex items-center justify-between bg-gray-700 bg-opacity-50 rounded-lg px-4 py-2.5">
+                      <span className="text-gray-200 text-sm font-medium">{skill.name}</span>
+                      <span className={`text-xs font-bold ${skill.color}`}>{skill.tier}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-700 text-center">
+                  <span className="text-gray-500 text-xs">37+ skills and growing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="py-20 bg-brand-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
