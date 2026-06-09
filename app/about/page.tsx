@@ -1,16 +1,17 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Franchise Now | AI Automation Agency',
-  description: 'Franchise Now is an AI automation agency that builds and manages custom systems for digital business owners. Here\'s who we are and why we built this.',
+  title: 'About Us | Franchise Now',
+  description: 'Meet the team behind Franchise Now. Rob and Noah Gandley help business owners install AI systems that generate leads and automate operations.',
 }
 
 export default function AboutPage() {
   return (
     <>
       {/* HERO - Full Bleed */}
-      <section className="relative bg-gradient-to-br from-brand-900 via-brand-700 to-brand-600 min-h-[70vh] flex items-center">
+      <section className="relative bg-gradient-to-br from-brand-900 via-brand-700 to-brand-600 min-h-[60vh] flex items-center">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)`
@@ -19,13 +20,13 @@ export default function AboutPage() {
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <div className="inline-block bg-white/10 backdrop-blur-sm text-white text-sm font-semibold px-5 py-2 rounded-full mb-6 border border-white/20">
-            Our Story
+            Meet The Team
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            We Got Tired of Watching Business Owners Pay for Tools That Never Got Turned On.
+            A Father-Son Team Building AI Systems for Business Growth
           </h1>
           <p className="text-xl md:text-2xl text-brand-100 leading-relaxed max-w-2xl mx-auto">
-            So we built an agency that does it for them.
+            We combine decades of marketing expertise with cutting-edge AI to help businesses automate what matters.
           </p>
         </div>
         
@@ -37,35 +38,97 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* STORY - Compact Layout */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6 text-gray-700 leading-relaxed">
-            <p className="text-lg">Most digital business owners we talk to have the same story.</p>
-            
-            <p>They&apos;ve tried the tools. They&apos;ve signed up for the platforms. They&apos;ve watched the YouTube tutorials and maybe hired someone to &ldquo;set it up.&rdquo; And three months later, nothing&apos;s working — or worse, it&apos;s working just enough to be confusing.</p>
-            
-            <p>Meanwhile, AI is moving fast. The business owners who figure out how to use automation effectively are pulling ahead of everyone who hasn&apos;t.</p>
-            
-            <p>We started Franchise Now because we saw a gap: there are plenty of people selling AI tools and plenty of people teaching AI concepts — but almost no one actually building and running the systems for business owners who don&apos;t have time to do it themselves.</p>
-            
-            <div className="bg-brand-50 border-l-4 border-brand-500 p-6 my-8 rounded-r-lg">
-              <p className="font-bold text-brand-900 text-lg mb-2">That&apos;s our lane.</p>
-              <p className="text-brand-700">We&apos;re not theorists. We&apos;re not course sellers. We&apos;re operators. We build systems, we install them, and we run them.</p>
+      {/* TEAM SECTION */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Rob Gandley */}
+          <div className="mb-20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="order-2 md:order-1">
+                <div className="text-brand-600 font-semibold text-sm uppercase tracking-wide mb-2">Founder & AI Consultant</div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Rob Gandley</h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    At the forefront of franchise marketing, Rob Gandley has blazed a trail for brands looking to 
+                    grow and innovate in an ever-evolving landscape. With over three decades of business 
+                    development, marketing and technology experience, he combines a deep understanding of 
+                    marketing with cutting-edge AI insights, providing franchise clients with a unique advantage in 
+                    the market.
+                  </p>
+                  <p>
+                    Since the early days of the internet revolution, Rob has been a pioneer in digital 
+                    marketing, creating one of the first Google-centric automated franchise lead generation 
+                    agencies. His focus on AI-powered solutions allows franchisors to reach new audiences, drive 
+                    organic growth, and stay ahead of the competition by leveraging automation and data-driven 
+                    strategies.
+                  </p>
+                  <p>
+                    Rob&apos;s passion for franchise success is clear in every aspect of his work. Whether he&apos;s 
+                    consulting for a leading franchise brand or interviewing industry leaders on his podcast, 
+                    <em> Franchise Marketing Radio</em>, his commitment to sharing insights is unwavering. Rob&apos;s thought 
+                    leadership extends to publications like <em>Entrepreneur Magazine</em>, where his expertise is 
+                    featured in the latest edition of the <em>Franchise Bible</em>.
+                  </p>
+                  <p>
+                    An avid outdoorsman, Rob&apos;s approach to franchise growth mirrors the lessons he&apos;s learned 
+                    from nature: innovate, adapt, and push beyond limits. Much like summiting a mountain, his 
+                    strategic mindset helps clients navigate challenges, seize opportunities, and reach new 
+                    heights in their business ventures.
+                  </p>
+                </div>
+              </div>
+              <div className="order-1 md:order-2 flex justify-center">
+                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image 
+                    src="/rob-gandley.jpg" 
+                    alt="Rob Gandley - Founder & AI Consultant"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
-            
-            <p>The measure of our success is simple: are our clients getting more booked calls, converting more leads, and spending less time on manual work?</p>
-            
-            <p className="font-bold text-gray-900 text-xl">If yes — we&apos;re doing our job.</p>
           </div>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 my-16"></div>
+
+          {/* Noah Gandley - Placeholder */}
+          <div>
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="flex justify-center">
+                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
+                  <span className="text-brand-400 text-6xl">👤</span>
+                </div>
+              </div>
+              <div>
+                <div className="text-brand-600 font-semibold text-sm uppercase tracking-wide mb-2">AI Operations & Implementation</div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Noah Gandley</h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p className="text-gray-500 italic">
+                    Bio coming soon...
+                  </p>
+                  <p>
+                    Noah leads AI implementation and operations at Franchise Now, helping clients 
+                    translate strategy into working systems. He specializes in building automated lead 
+                    generation, customer engagement, and operational workflows using OpenClaw and other 
+                    AI platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* MISSION - Compact */}
-      <section className="py-12 bg-gradient-to-r from-brand-600 to-brand-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-brand-600 to-brand-700 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-brand-200 text-sm font-semibold uppercase tracking-wide mb-3">Our Mission</div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Make AI automation practical and profitable for digital business owners.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Make AI automation practical and profitable for business owners.</h2>
           <p className="text-brand-100 text-lg">Not hype. Not theory. Real systems that produce measurable outcomes in real businesses.</p>
         </div>
       </section>
