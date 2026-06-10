@@ -95,26 +95,48 @@ export default function AboutPage() {
           {/* Divider */}
           <div className="border-t border-gray-200 my-16"></div>
 
-          {/* Noah Gandley - Placeholder */}
+          {/* Noah Gandley */}
           <div>
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="flex justify-center">
-                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
-                  <span className="text-brand-400 text-6xl">👤</span>
+                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image 
+                    src="/noah-gandley.jpg" 
+                    alt="Noah Gandley - Growth & AI Strategy"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div>
-                <div className="text-brand-600 font-semibold text-sm uppercase tracking-wide mb-2">AI Operations & Implementation</div>
+                <div className="text-brand-600 font-semibold text-sm uppercase tracking-wide mb-2">Growth & AI Strategy</div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Noah Gandley</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
-                  <p className="text-gray-500 italic">
-                    Bio coming soon...
+                  <p>
+                    At Franchise Now, Noah Gandley works at the intersection of AI strategy, media, and 
+                    franchise development — helping emerging franchise brands build smarter systems and 
+                    create more qualified growth opportunities. His work spans the company&apos;s podcast, 
+                    newsletter, webinars, AI opportunity assessments, and client engagement, with a hands-on 
+                    role in connecting franchise leaders to the automation and messaging strategies that actually 
+                    move the needle.
                   </p>
                   <p>
-                    Noah leads AI implementation and operations at Franchise Now, helping clients 
-                    translate strategy into working systems. He specializes in building automated lead 
-                    generation, customer engagement, and operational workflows using OpenClaw and other 
-                    AI platforms.
+                    Noah brings a practical, results-oriented approach to AI. After completing immersive AI 
+                    training in 2022 and 2023, he began applying automation platforms and AI tools to real 
+                    business challenges: simplifying operations, improving lead response, and helping franchise 
+                    teams think differently about scale. His strength is translating technology into clear, actionable 
+                    strategies that business owners can implement without a technical background.
+                  </p>
+                  <p>
+                    As the son of founder Rob Gandley, Noah grew up around franchise marketing and 
+                    entrepreneurship. Today he helps carry that mission forward — supporting the systems, 
+                    content, and relationships that connect Franchise Now with brands looking for smarter ways 
+                    to grow. His background building AI-powered marketing and automation workflows gives him 
+                    a unique ability to bridge strategy and execution in ways that create tangible results for clients.
+                  </p>
+                  <p>
+                    Outside of work, Noah is a former NCAA Division II athlete. That background shaped his 
+                    approach to business: disciplined, consistent, and focused on long-term improvement.
                   </p>
                 </div>
               </div>
