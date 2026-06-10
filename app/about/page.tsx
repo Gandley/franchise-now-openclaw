@@ -23,10 +23,10 @@ export default function AboutPage() {
             Meet The Team
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            A Father-Son Team Building AI Systems for Business Growth
+            The Team Behind Your AI Workforce
           </h1>
           <p className="text-xl md:text-2xl text-brand-100 leading-relaxed max-w-2xl mx-auto">
-            We combine decades of marketing expertise with cutting-edge AI to help businesses automate what matters.
+            We build and manage the AI systems that generate leads, book calls, and run operations—so you don't have to.
           </p>
         </div>
         
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div>
-                <div className="text-brand-600 font-semibold text-sm uppercase tracking-wide mb-2">Growth & AI Strategy</div>
+                <div className="text-brand-600 font-semibold text-sm uppercase tracking-wide mb-2">AI Operations & Implementation</div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Noah Gandley</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
